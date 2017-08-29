@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="LAT1:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/LAT1_jar</output-path>
+    <root id="archive" name="LAT1.jar">
+      <element id="module-output" name="LAT1" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/src/trabalho1/antlr-4.7-complete.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
