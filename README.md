@@ -7,5 +7,6 @@ Algoritmos e Programação da UFSCar, além de gerar o código correspondente em
 
 Referência a Biblioteca [ANTLR](http://www.antlr.org/)
 
-Autores: André Levi Zanon; Rodrigo Ferrari de Souza; Victor Hugo Domingos de Abreu; Victor Santos Ferrari.\n
+Autores: André Levi Zanon; Rodrigo Ferrari de Souza; Victor Hugo Domingos de Abreu; Victor Santos Ferrari.
+
 Professores: Helena Caseli e Daniel Lucrédio
