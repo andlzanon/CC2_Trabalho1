@@ -13,7 +13,6 @@ public class SaidaParser {
     public void println(String texto) {
         if(!modificado) modificado = true;
         conteudo.append(texto);
-        conteudo.append("\n");
     }
     
     public boolean isModificado() {

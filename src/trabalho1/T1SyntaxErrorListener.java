@@ -1,10 +1,8 @@
 package trabalho1;
 
 import java.util.BitSet;
-import org.antlr.v4.runtime.ANTLRErrorListener;
-import org.antlr.v4.runtime.Parser;
-import org.antlr.v4.runtime.RecognitionException;
-import org.antlr.v4.runtime.Recognizer;
+
+import org.antlr.v4.runtime.*;
 import org.antlr.v4.runtime.atn.ATNConfigSet;
 import org.antlr.v4.runtime.dfa.DFA;
 
@@ -18,18 +16,14 @@ public class T1SyntaxErrorListener implements ANTLRErrorListener {
 
     public void syntaxError(Recognizer<?, ?> rcgnzr, Object o, int i, int i1, String string, RecognitionException re) {
         if (!sp.isModificado()) {
-            // como na string contem uma frase padronizada em "no viable alternative at input 'near word'"
-            //acha todas as palavras da frase da string
-            String[] comAspas = string.split(" ");
-            //pega ultima palavra que contem a palavra mais proxima ao erro com aspas simples
-            String erroSintatico = comAspas[comAspas.length - 1];
-            //remove aspas simples
-            erroSintatico = erroSintatico.replace("'", "");
-            //caso o erro seja proximo a <EOF> e necessario remover <>
-            erroSintatico = erroSintatico.replace("<", "");
-            erroSintatico = erroSintatico.replace(">", "");
-            sp.println("Linha " + i + ": erro sintatico proximo a " + erroSintatico);
-            sp.println("Fim da compilacao");
+
+            Token token = (Token)o;
+            String tokenText = token.getText();
+            if (tokenText.contentEquals("<EOF>")) {
+                tokenText = "EOF";
+            }
+            String erro = "Linha " + i + ": erro sintatico proximo a " + tokenText;
+            sp.println(erro);
         }
     }
 

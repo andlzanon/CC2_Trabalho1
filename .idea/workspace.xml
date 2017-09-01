@@ -7,10 +7,67 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="942d631c-1d00-4618-a2f8-0865c4ec981d" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/CorretorTrabalho1.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/LAT1_jar/LAT1.jar" afterPath="$PROJECT_DIR$/out/artifacts/LAT1_jar/LAT1.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/CorretorTrabalho1.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/CorretorTrabalho1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Argumentos_opcionalContext.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Argumentos_opcionalContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Chamada_atribuicaoContext.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Chamada_atribuicaoContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Chamada_partesContext.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Chamada_partesContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$CmdContext.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$CmdContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$ComandosContext.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$ComandosContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$ConstantesContext.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$ConstantesContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$CorpoContext.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$CorpoContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Declaracao_globalContext.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Declaracao_globalContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Declaracoes_locaisContext.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Declaracoes_locaisContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$DimensaoContext.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$DimensaoContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Exp_aritmeticaContext.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Exp_aritmeticaContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Exp_relacionalContext.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Exp_relacionalContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$ExpressaoContext.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$ExpressaoContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$FatorContext.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$FatorContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Fator_logicoContext.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Fator_logicoContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Intervalo_opcionalContext.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Intervalo_opcionalContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Mais_constantesContext.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Mais_constantesContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Mais_expressaoContext.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Mais_expressaoContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Mais_identContext.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Mais_identContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Mais_parametrosContext.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Mais_parametrosContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Mais_selecaoContext.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Mais_selecaoContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Mais_variaveisContext.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Mais_variaveisContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Numero_intervaloContext.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Numero_intervaloContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Op_adicaoContext.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Op_adicaoContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Op_multiplicacaoContext.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Op_multiplicacaoContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Op_naoContext.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Op_naoContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Op_opcionalContext.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Op_opcionalContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Op_relacionalContext.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Op_relacionalContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Op_unarioContext.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Op_unarioContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Outras_parcelasContext.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Outras_parcelasContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Outros_fatoresContext.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Outros_fatoresContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Outros_termosContext.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Outros_termosContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Outros_termos_logicosContext.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Outros_termos_logicosContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$ParametroContext.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$ParametroContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Parametros_opcionalContext.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Parametros_opcionalContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$ParcelaContext.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$ParcelaContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Parcela_logicaContext.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Parcela_logicaContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Parcela_nao_unarioContext.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Parcela_nao_unarioContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Parcela_unarioContext.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Parcela_unarioContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$RegistroContext.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$RegistroContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$SelecaoContext.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$SelecaoContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Senao_opcionalContext.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Senao_opcionalContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$TermoContext.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$TermoContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Termo_logicoContext.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Termo_logicoContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$TipoContext.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$TipoContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Tipo_basicoContext.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Tipo_basicoContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Tipo_basico_identContext.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Tipo_basico_identContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Tipo_estendidoContext.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Tipo_estendidoContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Valor_constanteContext.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Valor_constanteContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Var_opcionalContext.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Var_opcionalContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/SaidaParser.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/SaidaParser.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/T1SyntaxErrorListener.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/T1SyntaxErrorListener.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LA.g4" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LA.g4" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/trabalho1/CorretorTrabalho1.java" afterPath="$PROJECT_DIR$/src/trabalho1/CorretorTrabalho1.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/trabalho1/LA.g4" afterPath="$PROJECT_DIR$/src/trabalho1/LA.g4" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/trabalho1/LAParser.java" afterPath="$PROJECT_DIR$/src/trabalho1/LAParser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/trabalho1/SaidaParser.java" afterPath="$PROJECT_DIR$/src/trabalho1/SaidaParser.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/trabalho1/T1SyntaxErrorListener.java" afterPath="$PROJECT_DIR$/src/trabalho1/T1SyntaxErrorListener.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -29,7 +86,10 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
               <caret line="10" column="25" lean-forward="false" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
-              <folding />
+              <folding>
+                <element signature="e#249#250#0" expanded="true" />
+                <element signature="e#276#277#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -37,8 +97,8 @@
       <file leaf-file-name="SaidaParser.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/trabalho1/SaidaParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="15" column="25" lean-forward="false" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+            <state relative-caret-position="238">
+              <caret line="14" column="31" lean-forward="false" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -47,12 +107,10 @@
       <file leaf-file-name="T1SyntaxErrorListener.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/trabalho1/T1SyntaxErrorListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-34">
-              <caret line="12" column="4" lean-forward="false" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="15" />
+            <state relative-caret-position="425">
+              <caret line="27" column="5" lean-forward="false" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#441#442#0" expanded="true" />
-                <element signature="e#469#470#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -68,11 +126,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CorretorTrabalho1.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CorretorTrabalho1.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/trabalho1/CorretorTrabalho1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="30" column="11" lean-forward="true" selection-start-line="30" selection-start-column="11" selection-end-line="30" selection-end-column="11" />
+            <state relative-caret-position="206">
+              <caret line="22" column="31" lean-forward="false" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -80,41 +138,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LAParser.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/trabalho1/LAParser.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="97">
-              <caret line="176" column="8" lean-forward="false" selection-start-line="176" selection-start-column="8" selection-end-line="176" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PilhaDeTabelas.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/trabalho1/PilhaDeTabelas.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#181#182#0" expanded="false" />
-                <element signature="e#239#240#0" expanded="false" />
-                <element signature="e#288#289#0" expanded="false" />
-                <element signature="e#318#319#0" expanded="false" />
-                <element signature="e#356#357#0" expanded="false" />
-                <element signature="e#391#392#0" expanded="false" />
-                <element signature="e#766#767#0" expanded="false" />
-                <element signature="e#794#795#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LA.g4" pinned="false" current-in-tab="false">
+      <file leaf-file-name="LA.g4" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/trabalho1/LA.g4">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1218">
-              <caret line="145" column="11" lean-forward="false" selection-start-line="145" selection-start-column="11" selection-end-line="145" selection-end-column="11" />
+            <state relative-caret-position="477">
+              <caret line="145" column="53" lean-forward="true" selection-start-line="145" selection-start-column="53" selection-end-line="145" selection-end-column="53" />
               <folding />
             </state>
           </provider>
@@ -125,14 +153,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
               <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-              <folding>
-                <element signature="e#149#150#0" expanded="false" />
-                <element signature="e#195#196#0" expanded="false" />
-                <element signature="e#233#234#0" expanded="false" />
-                <element signature="e#275#276#0" expanded="false" />
-                <element signature="e#318#319#0" expanded="false" />
-                <element signature="e#357#358#0" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -161,6 +182,8 @@
       <find>LAParser</find>
       <find>addError</find>
       <find>programa</find>
+      <find>,</find>
+      <find>&lt;-</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -177,7 +200,6 @@
         <option value="$PROJECT_DIR$/src/trabalho1/Mensagens.java" />
         <option value="$PROJECT_DIR$/src/trabalho1/T1ErrorListener.java" />
         <option value="$PROJECT_DIR$/src/trabalho1/LAT1.java" />
-        <option value="$PROJECT_DIR$/src/trabalho1/LA.g4" />
         <option value="$PROJECT_DIR$/src/trabalho1/TabelaDeSimbolos.java" />
         <option value="$PROJECT_DIR$/src/trabalho1/PilhaDeTabelas.java" />
         <option value="$PROJECT_DIR$/src/trabalho1/EntradaTabelaDeSimbolos.java" />
@@ -185,8 +207,9 @@
         <option value="$PROJECT_DIR$/src/trabalho1/T1SemanticError.java" />
         <option value="$PROJECT_DIR$/src/trabalho1/LAParser.java" />
         <option value="$PROJECT_DIR$/src/trabalho1/SaidaParser.java" />
-        <option value="$PROJECT_DIR$/src/trabalho1/T1SyntaxErrorListener.java" />
         <option value="$PROJECT_DIR$/src/trabalho1/CorretorTrabalho1.java" />
+        <option value="$PROJECT_DIR$/src/trabalho1/LA.g4" />
+        <option value="$PROJECT_DIR$/src/trabalho1/T1SyntaxErrorListener.java" />
       </list>
     </option>
   </component>
@@ -196,6 +219,7 @@
     <option name="width" value="1382" />
     <option name="height" value="744" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -211,7 +235,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -266,46 +291,9 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CC2_Trabalho1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CC2_Trabalho1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="out" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CC2_Trabalho1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CC2_Trabalho1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="out" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="artifacts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LAT1_jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -564,7 +552,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -577,20 +565,20 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32176656" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22767204" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="ANTLR Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39905363" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39905363" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -643,11 +631,128 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/trabalho1/EntradaTabelaDeSimbolos.java">
+    <entry file="file://$PROJECT_DIR$/src/trabalho1/LALexer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/trabalho1/PilhaDeTabelas.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#181#182#0" expanded="false" />
+            <element signature="e#239#240#0" expanded="false" />
+            <element signature="e#288#289#0" expanded="false" />
+            <element signature="e#318#319#0" expanded="false" />
+            <element signature="e#356#357#0" expanded="false" />
+            <element signature="e#391#392#0" expanded="false" />
+            <element signature="e#766#767#0" expanded="false" />
+            <element signature="e#794#795#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/trabalho1/Saida.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/trabalho1/T1SemanticError.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="1" lean-forward="false" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/trabalho1/LA.g4">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1218">
+          <caret line="145" column="11" lean-forward="false" selection-start-line="145" selection-start-column="11" selection-end-line="145" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/trabalho1/LAParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="97">
+          <caret line="176" column="8" lean-forward="false" selection-start-line="176" selection-start-column="8" selection-end-line="176" selection-end-column="8" />
+          <folding>
+            <marker date="1504295626797" expanded="true" signature="119858:120042" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/trabalho1/EntradaTabelaDeSimbolos.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="25" lean-forward="false" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
+          <folding>
+            <element signature="e#249#250#0" expanded="true" />
+            <element signature="e#276#277#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/trabalho1/TabelaDeSimbolos.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/trabalho1/SaidaParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="15" column="25" lean-forward="false" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/trabalho1/T1SyntaxErrorListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-34">
+          <caret line="12" column="4" lean-forward="false" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gen/trabalho1/LA.tokens">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/trabalho1/CorretorTrabalho1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="31" lean-forward="true" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/trabalho1/EntradaTabelaDeSimbolos.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding>
+            <element signature="e#249#250#0" expanded="true" />
+            <element signature="e#276#277#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -665,8 +770,6 @@
           <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#441#442#0" expanded="true" />
-            <element signature="e#469#470#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -711,14 +814,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding>
-            <element signature="e#149#150#0" expanded="false" />
-            <element signature="e#195#196#0" expanded="false" />
-            <element signature="e#233#234#0" expanded="false" />
-            <element signature="e#275#276#0" expanded="false" />
-            <element signature="e#318#319#0" expanded="false" />
-            <element signature="e#357#358#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -742,7 +838,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="e#249#250#0" expanded="true" />
+            <element signature="e#276#277#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -760,8 +859,6 @@
           <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#441#442#0" expanded="true" />
-            <element signature="e#469#470#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -806,14 +903,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding>
-            <element signature="e#149#150#0" expanded="false" />
-            <element signature="e#195#196#0" expanded="false" />
-            <element signature="e#233#234#0" expanded="false" />
-            <element signature="e#275#276#0" expanded="false" />
-            <element signature="e#318#319#0" expanded="false" />
-            <element signature="e#357#358#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -837,7 +927,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-          <folding />
+          <folding>
+            <element signature="e#249#250#0" expanded="true" />
+            <element signature="e#276#277#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -855,8 +948,6 @@
           <caret line="14" column="33" lean-forward="false" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#441#442#0" expanded="true" />
-            <element signature="e#469#470#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -899,14 +990,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="4" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
-          <folding>
-            <element signature="e#149#150#0" expanded="false" />
-            <element signature="e#195#196#0" expanded="false" />
-            <element signature="e#233#234#0" expanded="false" />
-            <element signature="e#275#276#0" expanded="false" />
-            <element signature="e#318#319#0" expanded="false" />
-            <element signature="e#357#358#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -923,7 +1007,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -931,7 +1014,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -957,14 +1039,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding>
-            <element signature="e#149#150#0" expanded="false" />
-            <element signature="e#195#196#0" expanded="false" />
-            <element signature="e#233#234#0" expanded="false" />
-            <element signature="e#275#276#0" expanded="false" />
-            <element signature="e#318#319#0" expanded="false" />
-            <element signature="e#357#358#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -976,27 +1051,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/trabalho1/LA.g4">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1218">
-          <caret line="145" column="11" lean-forward="false" selection-start-line="145" selection-start-column="11" selection-end-line="145" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/trabalho1/LAParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
+        <state relative-caret-position="561">
           <caret line="176" column="8" lean-forward="false" selection-start-line="176" selection-start-column="8" selection-end-line="176" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/trabalho1/EntradaTabelaDeSimbolos.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="25" lean-forward="false" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
-          <folding />
+          <folding>
+            <marker date="1504295626797" expanded="true" signature="119858:120042" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1010,31 +1071,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/trabalho1/SaidaParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="15" column="25" lean-forward="false" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+        <state relative-caret-position="238">
+          <caret line="14" column="31" lean-forward="false" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/trabalho1/T1SyntaxErrorListener.java">
+    <entry file="file://$PROJECT_DIR$/src/trabalho1/EntradaTabelaDeSimbolos.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-34">
-          <caret line="12" column="4" lean-forward="false" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="15" />
+        <state relative-caret-position="170">
+          <caret line="10" column="25" lean-forward="false" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#441#442#0" expanded="true" />
-            <element signature="e#469#470#0" expanded="true" />
+            <element signature="e#249#250#0" expanded="true" />
+            <element signature="e#276#277#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/trabalho1/CorretorTrabalho1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="30" column="11" lean-forward="true" selection-start-line="30" selection-start-column="11" selection-end-line="30" selection-end-column="11" />
+        <state relative-caret-position="206">
+          <caret line="22" column="31" lean-forward="false" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/trabalho1/T1SyntaxErrorListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="27" column="5" lean-forward="false" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/trabalho1/LA.g4">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="477">
+          <caret line="145" column="53" lean-forward="true" selection-start-line="145" selection-start-column="53" selection-end-line="145" selection-end-column="53" />
+          <folding />
         </state>
       </provider>
     </entry>
