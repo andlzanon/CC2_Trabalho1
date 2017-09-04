@@ -10,13 +10,14 @@ Referência a Biblioteca [ANTLR](http://www.antlr.org/)
 # Instruções de uso
 
 Antes de rodar o comando para compilar são necessarias duas acões:
+
 1- Modificar no arquivo CorretorTrabalho1\CorretorTrabalho1.java o comando File saidaCasoTeste = new File(local_dos_casos_de_teste) para o seu local;
 
 2- No IntelliJ entrar na barra superior em Build >> Build Artifacts... >> Build.
 
 
 Então usar o comando:
-java -jar <local do corretor do ava>.jar "java -jar <local do LAT1.jar>" gcc<necessario colocar o MINGW como variavel de ambiente> local_da_pasta_temp local_dos_casos_de_teste "RA's" correcao<sintatico, semantico ou tudo>
+java -jar local do corretor do ava.jar "java -jar local do LAT1.jar" gcc (necessario colocar o MINGW como variavel de ambiente) local_da_pasta_temp local_dos_casos_de_teste "RA's" correcao<sintatico, semantico ou tudo>
 
 
 ex: java -jar C:\Users\André\Documents\BCC\017.2\CC2\T1\CorretorTrabalho1\CorretorTrabalho1.jar "java -jar C:\Users\André\Documents\GitHub\CC2_Trabalho1\out\artifacts\LAT1_jar\LAT1.jar" gcc C:\Users\André\Documents\GitHub\CC2_Trabalho1\temp C:\Users\André\Documents\GitHub\CC2_Trabalho1\src\trabalho1\casosDeTesteT1\casosDeTesteT1 "619922" sintatico
