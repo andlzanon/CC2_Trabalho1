@@ -1,5 +1,10 @@
 grammar LA;
 
+@members{
+    private final int ERRO_COMENT = 11;
+    private final int ERRO_TOKEN = 10;
+}
+
 programa : declaracoes 'algoritmo' corpo 'fim_algoritmo';
 
 declaracoes : decl_local_global declaracoes |  ;
@@ -141,6 +146,10 @@ NUM_REAL   : ('+' | '-')? ('0'..'9')('0'..'9')* '.' ('0'..'9')+;
 
 CADEIA     : '"' ~('\n' | '\r' | '\'' | '\t')* '\'' | '"' ~('\n' | '\r' | '"' | '\t')* '"';
 
-COMENTARIO : '{' ~('\r'|'\n'|'}')* '}' {skip();};
+COMENTARIO : '{' ~('\n'|'}')* '}' {skip();};
 
 WS	       :	(' ' | '\t' | '\r' | '\n') {skip();};
+
+NAO_DECL   : ('@'| '|' | '!' | '"') {setType(ERRO_TOKEN);};
+
+COMENTARIO_INCOMPLETO : '{' ~('\n'|'}')*'\n' {setType(ERRO_COMENT);};

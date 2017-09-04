@@ -1,5 +1,11 @@
 grammar LA;
 
+@members{
+    String grupo = "<619922_619795_619841_552437>"
+    private final int ERRO_COMENT = 11;
+    private final int ERRO_TOKEN = 10;
+}
+
 programa : declaracoes 'algoritmo' corpo 'fim_algoritmo';
 
 declaracoes : decl_local_global declaracoes |  ;
@@ -132,7 +138,7 @@ fator_logico : op_nao parcela_logica;
 
 parcela_logica : 'verdadeiro' | 'falso' | exp_relacional;
 
-//tokens:
+/*Tokens: */
 IDENT      : ('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '0'..'9' | '_')*;
 
 NUM_INT    : ('+' | '-')? ('0'..'9')('0'..'9')*;
@@ -141,6 +147,15 @@ NUM_REAL   : ('+' | '-')? ('0'..'9')('0'..'9')* '.' ('0'..'9')+;
 
 CADEIA     : '"' ~('\n' | '\r' | '\'' | '\t')* '\'' | '"' ~('\n' | '\r' | '"' | '\t')* '"';
 
-COMENTARIO : '{' ~('\r'|'\n'|'}')* '}' {skip();};
+COMENTARIO : '{' ~('\n'|'}')* '}' {skip();};
 
 WS	       :	(' ' | '\t' | '\r' | '\n') {skip();};
+
+/* Tokens errados: para tratarmos os mesmos foram setados tipos especificos(setType(int)) para cada um
+ * assim para os tokens nao declarados foi setado o inteiro ERRO_TOKEN que possui por valor 10 e para os
+ * os comentarios incompletos foi declarado ERRO_COMENT com o valor 11. Ambos os valores foram escolhidos
+ * de forma parcial
+ */
+NAO_DECL   : ('@'| '|' | '!' | '"') {setType(ERRO_TOKEN);};
+
+COMENTARIO_INCOMPLETO : '{' ~('\n'|'}')*'\n' {setType(ERRO_COMENT);};
