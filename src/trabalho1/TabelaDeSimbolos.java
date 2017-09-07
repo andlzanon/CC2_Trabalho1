@@ -14,19 +14,28 @@ public class TabelaDeSimbolos {
         this.escopo = escopo;
     }
     
-    public void adicionarSimbolo(String nome, String tipo) {
-        simbolos.add(new EntradaTabelaDeSimbolos(nome,tipo));
+    public void adicionarSimbolo(String nome, String tipoVar, String tipo) {
+        simbolos.add(new EntradaTabelaDeSimbolos(nome, tipoVar, tipo));
     }
     
-    public void adicionarSimbolos(List<String> nomes, String tipo) {
+    public void adicionarSimbolos(List<String> nomes, String tipoVar, String tipo) {
         for(String s:nomes) {
-            simbolos.add(new EntradaTabelaDeSimbolos(s, tipo));
+            simbolos.add(new EntradaTabelaDeSimbolos(s, tipoVar, tipo));
         }
     }
     
     public boolean existeSimbolo(String nome) {
         for(EntradaTabelaDeSimbolos etds:simbolos) {
             if(etds.getNome().equals(nome)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean existeTipoVar(String tipoVar) {
+        for(EntradaTabelaDeSimbolos etds:simbolos) {
+            if(etds.getTipoVar().equals(tipoVar)) {
                 return true;
             }
         }

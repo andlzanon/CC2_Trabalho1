@@ -28,6 +28,15 @@ public class PilhaDeTabelas {
         return false;
     }
 
+    public boolean existeTipoVar(String tipoVar) {
+        for (TabelaDeSimbolos ts : pilha) {
+            if (ts.existeTipoVar(tipoVar)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public void desempilhar() {
         TabelaDeSimbolos ret = pilha.pop();
         Saida.println(ret.toString());
