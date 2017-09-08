@@ -4,7 +4,7 @@ public class Saida {
     private static StringBuffer texto = new StringBuffer();
     
     public static void println(String txt) {
-        texto.append(txt).append("\n");
+        texto.append(txt);
     }
     
     public static void clear() {
