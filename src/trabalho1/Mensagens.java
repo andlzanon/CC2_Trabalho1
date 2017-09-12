@@ -1,6 +1,7 @@
 package trabalho1;
 
 public class Mensagens {
+
     public static void erroVariavelNaoExiste(int numLinha, String variavel) {
         Saida.println("Linha " +numLinha + ": identificador " +variavel + " nao declarado");
     }

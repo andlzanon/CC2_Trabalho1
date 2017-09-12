@@ -25,7 +25,8 @@ declaracao_local :
 // variavel necessita ter nome linha e coluna
 variavel returns [String nome, int linha, String tipo_var, List<String> nomes, List<Integer> linhas]:
             IDENT dimensao mais_var ':'
-            tipo { $nome  = $IDENT.getText(); $linha = $IDENT.line; $tipo_var = $tipo.tipo_var; $nomes = $mais_var.nomes; $linhas = $mais_var.linhas;
+            tipo { $nome  = $IDENT.getText(); $linha = $IDENT.line; $tipo_var = $tipo.tipo_var;
+            $nomes = $mais_var.nomes; $linhas = $mais_var.linhas;
 
             					if(pilhaDeTabelas.existeSimbolo($nome))
             						Mensagens.erroVariavelJaDeclarada($linha, $nome);
@@ -33,25 +34,29 @@ variavel returns [String nome, int linha, String tipo_var, List<String> nomes, L
             						pilhaDeTabelas.topo().adicionarSimbolo($nome, $tipo_var, "variavel");
 
             					for(int i = 0; i < $nomes.size(); i++){
-            						if(pilhaDeTabelas.existeSimbolo($nomes.get(i)))
-            							Mensagens.erroVariavelJaDeclarada($linhas.get(i), $nomes.get(i));
-                                    else
+            					    if(!pilhaDeTabelas.existeSimbolo($nomes.get(i)))
             							pilhaDeTabelas.topo().adicionarSimbolo($nomes.get(i), $tipo_var, "variavel");
+            					    else
+            					        Mensagens.erroVariavelJaDeclarada($linhas.get(i), $nomes.get(i));
                               }
              };
 
 mais_var returns [ List<String> nomes, List<Integer> linhas]
 @init { $nomes = new ArrayList<String>();
         $linhas = new ArrayList<Integer>();} :
-            ',' IDENT
-            dimensao mais_var
-            { $nomes.add($IDENT.getText());
-              $linhas.add($IDENT.line);} |  ;
+            (',' IDENT {
+                        $nomes.add($IDENT.getText());
+                        $linhas.add($IDENT.line);
+                       }
+            dimensao)* ;
+
 
 
 identificador returns [String ident, int linha] :
             ponteiros_opcionais IDENT dimensao outros_ident
-            { $ident = $ponteiros_opcionais.ponteiro + $IDENT.getText() + $outros_ident.ident; $linha = $IDENT.line;}
+            {$ident = $IDENT.getText() + $outros_ident.ident; $linha = $IDENT.line;
+             if(!pilhaDeTabelas.existeSimbolo($ident))
+                    Mensagens.erroVariavelNaoExiste($linha, $ident);}
             ;
 
 ponteiros_opcionais returns [String ponteiro]
@@ -60,7 +65,7 @@ ponteiros_opcionais returns [String ponteiro]
             ponteiros_opcionais | ;
 
 outros_ident returns [String ident]
-@init { $ident = ""; }:
+@init { $ident = ""; } :
     '.' identificador {$ident = "." + $identificador.ident;}
      | ;
 
@@ -70,9 +75,8 @@ tipo returns [String tipo_var] :
             registro {$tipo_var = $registro.tipoRegistro;} |
             tipo_estendido {$tipo_var = $tipo_estendido.tipoCompleto;};
 
-mais_ident:
-    ',' identificador mais_ident
-    | ;
+mais_ident :
+    ',' identificador mais_ident | ;
 
 mais_variaveis : variavel mais_variaveis | ;
 
@@ -119,8 +123,7 @@ corpo : declaracoes_locais comandos;
 
 comandos : cmd comandos | ;
 
-//parte mais baixa da arvore para a declaracao de variaveis
-//adiciona na pilha de tabelas aqui
+
 cmd : 'leia' '(' identificador mais_ident')'
 | 'escreva' '(' expressao mais_expressao ')'
 | 'se' expressao 'entao' comandos senao_opcional 'fim_se'
