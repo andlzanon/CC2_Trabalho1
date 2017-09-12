@@ -173,9 +173,25 @@ outros_fatores : op_multiplicacao fator outros_fatores | ;
 
 parcela : op_unario parcela_unario | parcela_nao_unario;
 
-parcela_unario : '^' IDENT outros_ident dimensao | IDENT chamada_partes | NUM_INT | NUM_REAL | '(' expressao ')';
+parcela_unario : '^' IDENT{
+                            if(!pilhaDeTabelas.existeSimbolo($IDENT.getText()))
+                                                Mensagens.erroVariavelNaoExiste($IDENT.line, $IDENT.getText());
 
-parcela_nao_unario : '&' IDENT outros_ident dimensao | CADEIA;
+                            } outros_ident dimensao
+                            | IDENT{
+                                    if(!pilhaDeTabelas.existeSimbolo($IDENT.getText()))
+                                                Mensagens.erroVariavelNaoExiste($IDENT.line, $IDENT.getText());
+
+                                    } chamada_partes
+
+                            | NUM_INT | NUM_REAL | '(' expressao ')';
+
+parcela_nao_unario : '&' IDENT{
+                               if(!pilhaDeTabelas.existeSimbolo($IDENT.getText()))
+                                                 Mensagens.erroVariavelNaoExiste($IDENT.line, $IDENT.getText());
+
+                               } outros_ident dimensao
+                               | CADEIA;
 
 outras_parcelas : '%' parcela outras_parcelas | ;
 

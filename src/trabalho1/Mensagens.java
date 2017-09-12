@@ -2,15 +2,41 @@ package trabalho1;
 
 public class Mensagens {
 
+    public static boolean primeiro = true;
+
     public static void erroVariavelNaoExiste(int numLinha, String variavel) {
-        Saida.println("Linha " +numLinha + ": identificador " +variavel + " nao declarado");
+        //string do erro cometido
+        String erro = "Linha " +numLinha + ": identificador " +variavel + " nao declarado";
+        //verifica se e necessario pular uma linha antes de escrever a string para
+        //nao pular uma linha no comeco ou antes do "Fim da compilacao"
+        if (!primeiro){
+            erro = "\n" + erro;
+        }
+        //primeiro igual a false, ou seja, apos a primeira string todas pulam uma linha
+        //antes de escrever na Saida
+        primeiro = false;
+        //escreve o erro
+        Saida.println(erro);
     }
 
     public static void erroVariavelJaDeclarada(int numLinha, String variavel){
-        Saida.println("Linha " +numLinha + ": identificador " +variavel + " ja declarado anteriormente");
+        String erro = "Linha " +numLinha + ": identificador " +variavel + " ja declarado anteriormente";
+
+        if (!primeiro){
+            erro = "\n" + erro;
+        }
+        primeiro = false;
+        Saida.println(erro);
     }
 
     public static void tipoNaoDeclarado(int numLinha, String tipoErrado){
-        Saida.println("Linha " +numLinha + ": tipo " +tipoErrado + " nao declarado");
+        String erro = "Linha " +numLinha + ": tipo " +tipoErrado + " nao declarado";
+
+        if (!primeiro){
+            erro = "\n" + erro;
+        }
+        primeiro = false;
+
+        Saida.println(erro);
     }
 }

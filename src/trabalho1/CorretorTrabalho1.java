@@ -26,20 +26,20 @@ public class CorretorTrabalho1 {
         parser.programa();
 
         /*saida do analisador sintatico */
-        File saidaCasoTesteSintatico = new File("C:\\Users\\André\\Documents\\GitHub\\CC2_Trabalho1\\temp\\saidaProduzida\\saidaSintatico\\" + file.getName());
+        /*File saidaCasoTesteSintatico = new File("C:\\Users\\André\\Documents\\GitHub\\CC2_Trabalho1\\temp\\saidaProduzida\\saidaSintatico\\" + file.getName());
         PrintWriter pw = new PrintWriter(new FileWriter(saidaCasoTesteSintatico));
         pw.println(saida);
         pw.println("Fim da compilacao");
         pw.close();
-        pw.flush();
+        pw.flush(); */
 
 
         /*saida do analisador semantico*/
-        /*File saidaCasoTesteSemantico = new File("C:\\Users\\André\\Documents\\GitHub\\CC2_Trabalho1\\temp\\saidaProduzida\\saidaSemanticoComErros\\" + file.getName());
+        File saidaCasoTesteSemantico = new File("C:\\Users\\André\\Documents\\GitHub\\CC2_Trabalho1\\temp\\saidaProduzida\\saidaSemanticoComErros\\" + file.getName());
         PrintWriter pws = new PrintWriter(new FileWriter(saidaCasoTesteSemantico));
         pws.println(Saida.getTexto());
         pws.println("Fim da compilacao");
         pws.close();
-        pws.flush();*/
+        pws.flush();
     }
 }
