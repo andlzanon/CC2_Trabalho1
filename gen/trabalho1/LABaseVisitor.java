@@ -1,7 +1,6 @@
-// Generated from C:/Users/André/Documents/BCC/017.2/CC2/LAT1/src/trabalho1\LA.g4 by ANTLR 4.7
+// Generated from C:/Users/Andrï¿½/Documents/BCC/017.2/CC2/LAT1/src/trabalho1\LA.g4 by ANTLR 4.7
 package trabalho1;
 import org.antlr.v4.runtime.tree.AbstractParseTreeVisitor;
-
 /**
  * This class provides an empty implementation of {@link LAVisitor},
  * which can be extended to create a visitor which only needs to handle a subset
