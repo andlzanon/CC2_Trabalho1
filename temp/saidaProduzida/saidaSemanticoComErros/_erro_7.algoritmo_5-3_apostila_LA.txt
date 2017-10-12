@@ -1,16 +1,2 @@
-Linha 10: identificador lado2 nao declarado
-Linha 10: identificador lado3 nao declarado
-Linha 12: identificador lado2 nao declarado
-Linha 12: identificador lado3 nao declarado
-Linha 12: identificador lado2 nao declarado
-Linha 12: identificador lado3 nao declarado
-Linha 12: identificador lado3 nao declarado
-Linha 12: identificador lado2 nao declarado
-Linha 15: identificador lado2 nao declarado
-Linha 15: identificador lado2 nao declarado
-Linha 15: identificador lado3 nao declarado
-Linha 18: identificador lado2 nao declarado
-Linha 18: identificador lado3 nao declarado
-Linha 18: identificador lado2 nao declarado
-Linha 18: identificador lado3 nao declarado
+
 Fim da compilacao

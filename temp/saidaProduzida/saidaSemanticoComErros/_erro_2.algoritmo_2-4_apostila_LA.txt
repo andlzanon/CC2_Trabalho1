@@ -1,4 +1,0 @@
-Linha 10: identificador abastecimento1 nao declarado
-Linha 10: identificador abastecimento nao declarado
-Linha 16: identificador consumo nao declarado
-Fim da compilacao

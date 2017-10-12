@@ -1199,7 +1199,8 @@ public class LAParser extends Parser {
 	}
 
 	public static class Declaracao_globalContext extends ParserRuleContext {
-		public TerminalNode IDENT() { return getToken(LAParser.IDENT, 0); }
+		public Token identProc;
+		public Token identFunc;
 		public Parametros_opcionalContext parametros_opcional() {
 			return getRuleContext(Parametros_opcionalContext.class,0);
 		}
@@ -1209,6 +1210,7 @@ public class LAParser extends Parser {
 		public ComandosContext comandos() {
 			return getRuleContext(ComandosContext.class,0);
 		}
+		public TerminalNode IDENT() { return getToken(LAParser.IDENT, 0); }
 		public Tipo_estendidoContext tipo_estendido() {
 			return getRuleContext(Tipo_estendidoContext.class,0);
 		}
@@ -1239,7 +1241,7 @@ public class LAParser extends Parser {
 				setState(220);
 				match(T__20);
 				setState(221);
-				match(IDENT);
+				((Declaracao_globalContext)_localctx).identProc = match(IDENT);
 				setState(222);
 				match(T__21);
 				setState(223);
@@ -1260,7 +1262,7 @@ public class LAParser extends Parser {
 				setState(229);
 				match(T__24);
 				setState(230);
-				match(IDENT);
+				((Declaracao_globalContext)_localctx).identFunc = match(IDENT);
 				setState(231);
 				match(T__21);
 				setState(232);

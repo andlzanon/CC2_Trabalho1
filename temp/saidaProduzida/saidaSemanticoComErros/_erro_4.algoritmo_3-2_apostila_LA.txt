@@ -1,4 +1,2 @@
-Linha 8: identificador sobrenome nao declarado
-Linha 15: identificador formato1 nao declarado
-Linha 16: identificador formato2 nao declarado
+
 Fim da compilacao

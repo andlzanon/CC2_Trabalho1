@@ -1,6 +1,2 @@
-Linha 14: identificador lado2 nao declarado
-Linha 16: identificador lado3 nao declarado
-Linha 32: identificador ehEquilatero nao declarado
-Linha 33: identificador ehIsosceles nao declarado
-Linha 34: identificador ehEscaleno nao declarado
+
 Fim da compilacao

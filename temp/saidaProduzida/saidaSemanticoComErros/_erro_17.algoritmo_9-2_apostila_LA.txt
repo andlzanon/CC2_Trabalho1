@@ -1,0 +1,5 @@
+Linha 8: identificador racional nao declarado
+Linha 8: tipo tRacional nao declarado
+Linha 28: tipo tRacional nao declarado
+Linha 29: identificador simplifiqueRacional ja declarado anteriormente
+Fim da compilacao

@@ -14,7 +14,7 @@ public class CorretorTrabalho1 {
 
         SaidaParser saida = new SaidaParser();
 
-        /*caminho do arquivo */
+        /*caminho do arquivo*/
         File file = new File(args[0]);
 
         ANTLRInputStream input = new ANTLRInputStream(new FileInputStream(file));

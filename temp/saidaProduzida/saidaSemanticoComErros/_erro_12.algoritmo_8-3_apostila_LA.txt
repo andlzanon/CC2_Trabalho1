@@ -1,0 +1,4 @@
+Linha 10: tipo tVinho nao declarado
+Linha 16: identificador Preco nao declarado
+Linha 28: identificador vinhocaro nao declarado
+Fim da compilacao

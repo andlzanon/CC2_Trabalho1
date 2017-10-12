@@ -1,6 +1,2 @@
-Linha 16: identificador velocidadeInicial nao declarado
-Linha 16: identificador distancia nao declarado
-Linha 16: identificador espessura nao declarado
-Linha 16: identificador altura nao declarado
 Linha 31: identificador colisao nao declarado
 Fim da compilacao

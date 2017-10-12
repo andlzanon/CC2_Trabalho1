@@ -231,10 +231,22 @@ public class LASemantico extends LABaseVisitor {
         // declaracao_global: 'procedimento' IDENT '(' parametros_opcional ')' declaracoes_locais comandos 'fim_procedimento'
         //                |'funcao' IDENT '(' parametros_opcional ')' ':' tipo_estendido declaracoes_locais comandos 'fim_funcao';
         if(ctx.getText().startsWith("procedimento")){
+            if(pilhaDeTabelas.existeSimbolo(ctx.identProc.getText())){
+                Mensagens.erroVariavelJaDeclarada(ctx.start.getLine(), ctx.IDENT().getText());
+            }
+            else{
+                pilhaDeTabelas.topo().adicionarSimbolo(ctx.IDENT().getText(), "procedimento", "procedimento");
+            }
             visitParametros_opcional(ctx.parametros_opcional()); //Adicionar Erro
             visitDeclaracoes_locais(ctx.declaracoes_locais());
             visitComandos(ctx.comandos());
         }else{
+            if(pilhaDeTabelas.existeSimbolo(ctx.identFunc.getText())){
+                Mensagens.erroVariavelJaDeclarada(ctx.start.getLine(), ctx.IDENT().getText());
+            }
+            else{
+                pilhaDeTabelas.topo().adicionarSimbolo(ctx.IDENT().getText(), "funcao", "funcao");
+            }
             visitParametros_opcional(ctx.parametros_opcional()); //Adicionar Erro
             visitTipo_estendido(ctx.tipo_estendido());
             visitDeclaracoes_locais(ctx.declaracoes_locais());
@@ -538,17 +550,28 @@ public class LASemantico extends LABaseVisitor {
                 | '(' expressao ')';*/
 
         if (ctx.getText().startsWith("^")) {
+            if(!pilhaDeTabelas.topo().existeSimbolo(ctx.identpu_1.getText())){
+                Mensagens.erroVariavelNaoExiste(ctx.start.getLine(), ctx.IDENT().getText());
+            }
             visitOutros_ident(ctx.outros_ident());
             visitDimensao(ctx.dimensao());
-        } else if (ctx.getText().startsWith("IDENT")) {
+
+        } else if (ctx.IDENT() != null) {
+            if(!pilhaDeTabelas.topo().existeSimbolo(ctx.identpu_2.getText())){
+                Mensagens.erroVariavelNaoExiste(ctx.start.getLine(), ctx.IDENT().getText());
+            }
             visitChamada_partes(ctx.chamada_partes());
+
         } else if (ctx.getText().startsWith("(")) {
             visitExpressao(ctx.expressao());
         }
-
-        if(!pilhaDeTabelas.topo().existeSimbolo(ctx.IDENT().getText())){
-            Mensagens.erroVariavelNaoExiste(ctx.start.getLine(), ctx.IDENT().getText());
+        else if(ctx.NUM_INT() != null){
+            return ctx.NUM_INT().getText();
         }
+        else if(ctx.NUM_REAL() != null){
+            return ctx.NUM_REAL().getText();
+        }
+
         return null;
     }
 
