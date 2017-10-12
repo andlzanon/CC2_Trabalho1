@@ -102,7 +102,6 @@ public class LALexer extends Lexer {
 
 
 	    String grupo = "<619922_619795_619841_552437>";
-	    PilhaDeTabelas pilhaDeTabelas = new PilhaDeTabelas();
 	    private final int ERRO_COMENT = 11;
 	    private final int ERRO_TOKEN = 10;
 

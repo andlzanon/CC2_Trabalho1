@@ -1,6 +1,8 @@
 package trabalho1;
 
 import org.antlr.v4.runtime.*;
+import org.antlr.v4.runtime.tree.ParseTree;
+import trabalho1.LAParser.*;
 
 import java.io.*;
 
@@ -12,7 +14,7 @@ public class CorretorTrabalho1 {
 
         SaidaParser saida = new SaidaParser();
 
-        //caminho do arquivo
+        /*caminho do arquivo */
         File file = new File(args[0]);
 
         ANTLRInputStream input = new ANTLRInputStream(new FileInputStream(file));
@@ -23,10 +25,26 @@ public class CorretorTrabalho1 {
         LAParser parser = new LAParser(tokens);
         parser.removeErrorListeners();
         parser.addErrorListener(new T1SyntaxErrorListener(saida));
-        parser.programa();
+        ProgramaContext arvore = parser.programa();
 
-        /*saida do analisador sintatico */
-        /*File saidaCasoTesteSintatico = new File("C:\\CC2_Trabalho1\\temp\\saidaProduzida\\saidaSintatico\\" + file.getName());
+        /*testa exemplo unico
+        File file = new File("C:\\Users\\André\\Documents\\GitHub\\CC2_Trabalho1\\src\\trabalho1\\casosDeTesteT1\\casosDeTesteT1\\2.arquivos_com_erros_semanticos\\entrada\\3.algoritmo_3-1_apostila_LA.txt");
+        ANTLRInputStream input = new ANTLRInputStream(new FileInputStream(file));
+        LALexer lexer = new LALexer(input);
+        lexer.removeErrorListeners();
+        CommonTokenStream tokens = new CommonTokenStream(lexer);
+        LAParser parser = new LAParser(tokens);
+        parser.removeErrorListeners();
+        parser.addErrorListener(new T1SyntaxErrorListener(saida));
+        ProgramaContext arvore = parser.programa();
+        LASemantico laSemantico = new LASemantico();
+        laSemantico.visitPrograma(arvore);
+        System.out.println(Saida.getTexto());*/
+
+
+
+        //saida do analisador sintatico
+        /*File saidaCasoTesteSintatico = new File("C:\\Users\\André\\Documents\\GitHub\\CC2_Trabalho1\\temp\\saidaProduzida\\saidaSintatico\\" + file.getName());
         PrintWriter pw = new PrintWriter(new FileWriter(saidaCasoTesteSintatico));
         pw.println(saida);
         pw.println("Fim da compilacao");
@@ -35,7 +53,9 @@ public class CorretorTrabalho1 {
 
 
         /*saida do analisador semantico*/
-        File saidaCasoTesteSemantico = new File("C:\\CC2_Trabalho1\\temp\\saidaProduzida\\saidaSemanticoComErros\\" + file.getName());
+        LASemantico laSemantico = new LASemantico();
+        laSemantico.visitPrograma(arvore);
+        File saidaCasoTesteSemantico = new File("C:\\Users\\André\\Documents\\GitHub\\CC2_Trabalho1\\temp\\saidaProduzida\\saidaSemanticoComErros\\" + file.getName());
         PrintWriter pws = new PrintWriter(new FileWriter(saidaCasoTesteSemantico));
         pws.println(Saida.getTexto());
         pws.println("Fim da compilacao");

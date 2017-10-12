@@ -2,15 +2,13 @@ grammar LA;
 
 @members{
     String grupo = "<619922_619795_619841_552437>";
-    PilhaDeTabelas pilhaDeTabelas = new PilhaDeTabelas();
     private final int ERRO_COMENT = 11;
     private final int ERRO_TOKEN = 10;
 }
 
 programa :
-            { pilhaDeTabelas.empilhar(new TabelaDeSimbolos("global")); }
             declaracoes 'algoritmo' corpo 'fim_algoritmo'
-            { pilhaDeTabelas.desempilhar(); };
+            ;
 
 declaracoes : decl_local_global declaracoes |  ;
 
@@ -23,57 +21,30 @@ declaracao_local :
 
 
 // variavel necessita ter nome linha e coluna
-variavel returns [String nome, int linha, String tipo_var, List<String> nomes, List<Integer> linhas]:
-            IDENT dimensao mais_var ':'
-            tipo { $nome  = $IDENT.getText(); $linha = $IDENT.line; $tipo_var = $tipo.tipo_var;
-            $nomes = $mais_var.nomes; $linhas = $mais_var.linhas;
+variavel :
+            IDENT dimensao mais_var ':' tipo ;
 
-            					if(pilhaDeTabelas.existeSimbolo($nome))
-            						Mensagens.erroVariavelJaDeclarada($linha, $nome);
-            					else
-            						pilhaDeTabelas.topo().adicionarSimbolo($nome, $tipo_var, "variavel");
-
-            					for(int i = 0; i < $nomes.size(); i++){
-            					    if(!pilhaDeTabelas.existeSimbolo($nomes.get(i)))
-            							pilhaDeTabelas.topo().adicionarSimbolo($nomes.get(i), $tipo_var, "variavel");
-            					    else
-            					        Mensagens.erroVariavelJaDeclarada($linhas.get(i), $nomes.get(i));
-                              }
-             };
-
-mais_var returns [ List<String> nomes, List<Integer> linhas]
-@init { $nomes = new ArrayList<String>();
-        $linhas = new ArrayList<Integer>();} :
-            (',' IDENT {
-                        $nomes.add($IDENT.getText());
-                        $linhas.add($IDENT.line);
-                       }
-            dimensao)* ;
+mais_var:
+(',' IDENT dimensao)* ;
 
 
-
-identificador returns [String ident, int linha] :
+identificador :
             ponteiros_opcionais IDENT dimensao outros_ident
-            {$ident = $IDENT.getText() + $outros_ident.ident; $linha = $IDENT.line;
-             if(!pilhaDeTabelas.existeSimbolo($ident))
-                    Mensagens.erroVariavelNaoExiste($linha, $ident);}
             ;
 
-ponteiros_opcionais returns [String ponteiro]
-@init { $ponteiro = ""; } :
-            '^' {$ponteiro += "^";}
-            ponteiros_opcionais | ;
+ponteiros_opcionais:
+            '^' ponteiros_opcionais
+            | ;
 
-outros_ident returns [String ident]
-@init { $ident = ""; } :
-    '.' identificador {$ident = "." + $identificador.ident;}
-     | ;
+outros_ident:
+    '.' identificador
+    | ;
 
 dimensao : '[' exp_aritmetica ']' dimensao | ;
 
-tipo returns [String tipo_var] :
-            registro {$tipo_var = $registro.tipoRegistro;} |
-            tipo_estendido {$tipo_var = $tipo_estendido.tipoCompleto;};
+tipo :
+            registro |
+            tipo_estendido ;
 
 mais_ident :
     ',' identificador mais_ident | ;
@@ -81,28 +52,28 @@ mais_ident :
 mais_variaveis : variavel mais_variaveis | ;
 
 
-tipo_basico returns [String tipo_var]
-            : 'literal' {$tipo_var = "literal";}
-            | 'inteiro' {$tipo_var = "inteiro";}
-            | 'real'    {$tipo_var = "real";}
-            | 'logico'  {$tipo_var = "logico";} ;
+tipo_basico
+            : 'literal'
+            | 'inteiro'
+            | 'real'
+            | 'logico'   ;
 
 
 tipo_basico_ident returns [String tipo_var] :
-        tipo_basico { $tipo_var = $tipo_basico.tipo_var; } |
-        IDENT { if(!pilhaDeTabelas.existeTipoVar($IDENT.getText()))
-                    Mensagens.tipoNaoDeclarado($IDENT.line, $IDENT.getText()); } ;
+        tipo_basico  |
+        IDENT
+        ;
 
 
 tipo_estendido returns [String tipoCompleto]
             : ponteiros_opcionais tipo_basico_ident
-            {$tipoCompleto = $ponteiros_opcionais.ponteiro + $tipo_basico_ident.tipo_var;};
+            ;
 
 
 valor_constante : CADEIA | NUM_INT | NUM_REAL | 'verdadeiro' | 'falso';
 
-registro returns [String tipoRegistro] :
-            'registro' {$tipoRegistro = "registro";}
+registro :
+            'registro'
             variavel mais_variaveis
             'fim_registro';
 
@@ -173,25 +144,14 @@ outros_fatores : op_multiplicacao fator outros_fatores | ;
 
 parcela : op_unario parcela_unario | parcela_nao_unario;
 
-parcela_unario : '^' IDENT{
-                            if(!pilhaDeTabelas.existeSimbolo($IDENT.getText()))
-                                                Mensagens.erroVariavelNaoExiste($IDENT.line, $IDENT.getText());
+parcela_unario : '^' identpu_1=IDENT outros_ident dimensao
+                 | identpu_2=IDENT chamada_partes
+                 | NUM_INT
+                 | NUM_REAL
+                 | '(' expressao ')';
 
-                            } outros_ident dimensao
-                            | IDENT{
-                                    if(!pilhaDeTabelas.existeSimbolo($IDENT.getText()))
-                                                Mensagens.erroVariavelNaoExiste($IDENT.line, $IDENT.getText());
-
-                                    } chamada_partes
-
-                            | NUM_INT | NUM_REAL | '(' expressao ')';
-
-parcela_nao_unario : '&' IDENT{
-                               if(!pilhaDeTabelas.existeSimbolo($IDENT.getText()))
-                                                 Mensagens.erroVariavelNaoExiste($IDENT.line, $IDENT.getText());
-
-                               } outros_ident dimensao
-                               | CADEIA;
+parcela_nao_unario : '&' IDENT outros_ident dimensao
+                     | CADEIA;
 
 outras_parcelas : '%' parcela outras_parcelas | ;
 
