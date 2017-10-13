@@ -1,7 +1,7 @@
 package trabalho1;
 
-
 import org.antlr.v4.runtime.Token;
+import java.util.ArrayList;
 
 /**
  * Created by Andre on 04/10/2017.
@@ -10,6 +10,10 @@ public class LASemantico extends LABaseVisitor {
     String grupo;
     PilhaDeTabelas pilhaDeTabelas;
     String tipo;
+
+    //registros
+    Registro registros;
+    boolean eRegistro = false;
 
     public LASemantico() {
         grupo = "<619922_619795_619841_552437>";
@@ -20,6 +24,13 @@ public class LASemantico extends LABaseVisitor {
         //declaracoes 'algoritmo' corpo 'fim_algoritmo'
         pilhaDeTabelas = new PilhaDeTabelas();
         pilhaDeTabelas.empilhar(new TabelaDeSimbolos("global"));
+
+        //registros
+        registros = new Registro();
+        registros.add("inteiro");
+        registros.add("real");
+        registros.add("literal");
+        registros.add("logico");
 
         if(ctx != null){
             visitDeclaracoes(ctx.declaracoes());
@@ -57,8 +68,12 @@ public class LASemantico extends LABaseVisitor {
         else if (ctx.getText().startsWith("constante")){
             visitTipo_basico(ctx.tipo_basico()); //Adicionar Erros
             visitValor_constante(ctx.valor_constante());
-        }else if (ctx.getText().startsWith("tipo"))
+        }else if (ctx.getText().startsWith("tipo")){
+            //registros
+            registros.add(ctx.IDENT().getText());
             visitTipo(ctx.tipo());
+        }
+
         return null;
     }
 
@@ -70,7 +85,7 @@ public class LASemantico extends LABaseVisitor {
             visitMais_var(ctx.mais_var());
             tipo = visitTipo(ctx.tipo());
 
-            if(pilhaDeTabelas.existeSimbolo(ctx.IDENT().getText())){
+            if(pilhaDeTabelas.existeSimbolo(ctx.IDENT().getText()) || registros.achouTipo(ctx.IDENT().getText())){
                 Mensagens.erroVariavelJaDeclarada(ctx.getStart().getLine(), ctx.IDENT().getText());
             }
             else{
@@ -79,7 +94,7 @@ public class LASemantico extends LABaseVisitor {
 
             if(ctx.mais_var() != null){
                 for(int i = 0; i < ctx.mais_var().IDENT().size(); i++){
-                    if(!pilhaDeTabelas.existeSimbolo(ctx.mais_var().IDENT().get(i).toString())){
+                    if(!pilhaDeTabelas.existeSimbolo(ctx.mais_var().IDENT().get(i).getText()) && !registros.achouTipo(ctx.mais_var().IDENT().get(i).getText())){
                         pilhaDeTabelas.topo().adicionarSimbolo(ctx.mais_var().IDENT().get(i).toString(), tipo, "variavel");
                     }
                     else{
@@ -109,9 +124,11 @@ public class LASemantico extends LABaseVisitor {
     @Override
     public String visitIdentificador(LAParser.IdentificadorContext ctx) {
         //identificador : ponteiros_opcionais IDENT dimensao outros_ident;
+
+        //por meio do G4, junta-se os outros identificadores e ponteiros no indentificador
         if(ctx.children != null){
-            if(!pilhaDeTabelas.existeSimbolo(ctx.IDENT().getText())){
-                Mensagens.erroVariavelNaoExiste(ctx.start.getLine(), ctx.IDENT().getText());
+            if(!pilhaDeTabelas.existeSimbolo(ctx.ident)){
+                Mensagens.erroVariavelNaoExiste(ctx.linha, ctx.ident);
             }
 
             visitPonteiros_opcionais(ctx.ponteiros_opcionais()); //Adicionar Erros
@@ -191,11 +208,15 @@ public class LASemantico extends LABaseVisitor {
             return ctx.tipo_basico().getText();
         }
         else {
-            if ((!pilhaDeTabelas.existeTipoVar(ctx.IDENT().getText()))) { //adicionar posteriormente registro
+            //registros
+            if (!registros.achouTipo(ctx.IDENT().getText())) { //adicionar posteriormente registro
                 Mensagens.tipoNaoDeclarado(ctx.getStart().getLine(), ctx.IDENT().getText());
             }
-            else
-                return null; //tratar depois
+            else{
+                eRegistro = true;
+                return ctx.IDENT().getText();
+            }
+
         }
         return null;
     }
@@ -356,7 +377,9 @@ public class LASemantico extends LABaseVisitor {
             visitOutros_ident(ctx.outros_ident());
             visitDimensao(ctx.dimensao());
             visitExpressao(ctx.expressao());
-        }else if(ctx.getText().startsWith("IDENT")){
+        }else if(ctx.IDENT() != null){
+            if(!pilhaDeTabelas.existeSimbolo(ctx.IDENT().getText()))
+                Mensagens.erroVariavelNaoExiste(ctx.start.getLine(), ctx.IDENT().getText());
             visitChamada_atribuicao(ctx.chamada_atribuicao());
         }else if(ctx.getText().startsWith("retorne")){
             visitExpressao(ctx.expressao());

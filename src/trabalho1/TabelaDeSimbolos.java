@@ -42,17 +42,15 @@ public class TabelaDeSimbolos {
         return false;
     }
 
+    public String getEscopo(){
+        return this.escopo;
+    }
+
     private static TabelaDeSimbolos getInstancia() {
         if (instancia == null) {
             instancia = new TabelaDeSimbolos("global");
         }
         return instancia;
-    }
-
-    public static void imprimirTabela(SaidaParser out) {
-        for (EntradaTabelaDeSimbolos etds : getInstancia().simbolos) {
-            out.println(etds.toString());
-        }
     }
     
     @Override

@@ -12,5 +12,7 @@ Linha 17: identificador valor1 nao declarado
 Linha 19: identificador valor2 nao declarado
 Linha 23: identificador valor nao declarado
 Linha 26: identificador valor nao declarado
+Linha 27: identificador valor nao declarado
+Linha 27: identificador valor nao declarado
 Linha 29: identificador valor nao declarado
 Fim da compilacao

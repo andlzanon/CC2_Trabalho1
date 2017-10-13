@@ -1,5 +1,13 @@
 Linha 8: identificador racional nao declarado
-Linha 8: tipo tRacional nao declarado
-Linha 28: tipo tRacional nao declarado
+Linha 13: identificador racional nao declarado
+Linha 14: identificador racional nao declarado
+Linha 22: identificador racional nao declarado
+Linha 22: identificador racional nao declarado
+Linha 23: identificador racional nao declarado
+Linha 23: identificador racional nao declarado
 Linha 29: identificador simplifiqueRacional ja declarado anteriormente
+Linha 33: identificador numero1.numerador nao declarado
+Linha 35: identificador numero1.denominador nao declarado
+Linha 37: identificador numero2.numerador nao declarado
+Linha 39: identificador numero2.denominador nao declarado
 Fim da compilacao

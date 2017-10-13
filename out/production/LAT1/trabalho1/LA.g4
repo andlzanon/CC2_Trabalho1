@@ -19,32 +19,30 @@ declaracao_local :
                  | 'constante' IDENT ':' tipo_basico '=' valor_constante
                  | 'tipo' IDENT ':' tipo;
 
+variavel : IDENT dimensao mais_var ':' tipo ;
 
-// variavel necessita ter nome linha e coluna
-variavel :
-            IDENT dimensao mais_var ':' tipo ;
-
-mais_var:
-(',' IDENT dimensao)* ;
+mais_var: (',' IDENT dimensao)* ;
 
 
-identificador :
+identificador returns [String ident, int linha] :
             ponteiros_opcionais IDENT dimensao outros_ident
-            ;
+            { $ident = $ponteiros_opcionais.ponteiro + $IDENT.getText() + $outros_ident.ident; $linha = $IDENT.line; };
 
-ponteiros_opcionais:
-            '^' ponteiros_opcionais
+ponteiros_opcionais returns [String ponteiro]
+@init { $ponteiro = ""; } :
+            '^' {$ponteiro += "^";}
+            ponteiros_opcionais | ;
+
+outros_ident returns [String ident]
+@init { $ident = ""; }:
+    '.' identificador {$ident = "." + $identificador.ident;}
+     | ;
+
+dimensao : '[' exp_aritmetica ']' dimensao
             | ;
 
-outros_ident:
-    '.' identificador
-    | ;
-
-dimensao : '[' exp_aritmetica ']' dimensao | ;
-
-tipo :
-            registro |
-            tipo_estendido ;
+tipo :  registro |
+        tipo_estendido ;
 
 mais_ident :
     ',' identificador mais_ident | ;
@@ -52,28 +50,25 @@ mais_ident :
 mais_variaveis : variavel mais_variaveis | ;
 
 
-tipo_basico
-            : 'literal'
+tipo_basico: 'literal'
             | 'inteiro'
             | 'real'
             | 'logico'   ;
 
 
-tipo_basico_ident returns [String tipo_var] :
+tipo_basico_ident :
         tipo_basico  |
         IDENT
         ;
 
 
-tipo_estendido returns [String tipoCompleto]
-            : ponteiros_opcionais tipo_basico_ident
-            ;
+tipo_estendido : ponteiros_opcionais tipo_basico_ident
+                ;
 
 
 valor_constante : CADEIA | NUM_INT | NUM_REAL | 'verdadeiro' | 'falso';
 
-registro :
-            'registro'
+registro :  'registro'
             variavel mais_variaveis
             'fim_registro';
 
