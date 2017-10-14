@@ -43,7 +43,7 @@ public class Registro {
        registros.get(i).adicionarSimbolo(nome, tipoVar, tipo);
    }
 
-   public String getEscopoTabela(int i){
-        return registros.get(i).getEscopo();
+   public TabelaDeSimbolos getTabela(int i){
+        return registros.get(i);
    }
 }

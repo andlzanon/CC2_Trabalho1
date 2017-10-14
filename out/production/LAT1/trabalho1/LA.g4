@@ -30,7 +30,7 @@ identificador returns [String ident, int linha] :
 
 ponteiros_opcionais returns [String ponteiro]
 @init { $ponteiro = ""; } :
-            '^' {$ponteiro += "^";}
+            '^' {$ponteiro = "^";}
             ponteiros_opcionais | ;
 
 outros_ident returns [String ident]
@@ -45,9 +45,9 @@ tipo :  registro |
         tipo_estendido ;
 
 mais_ident :
-    ',' identificador mais_ident | ;
+    (',' identificador)*;
 
-mais_variaveis : variavel mais_variaveis | ;
+mais_variaveis : (variavel)* ;
 
 
 tipo_basico: 'literal'
@@ -139,10 +139,12 @@ outros_fatores : op_multiplicacao fator outros_fatores | ;
 
 parcela : op_unario parcela_unario | parcela_nao_unario;
 
-parcela_unario : '^' identpu_1=IDENT outros_ident dimensao
-                 | identpu_2=IDENT chamada_partes
-                 | NUM_INT
-                 | NUM_REAL
+parcela_unario returns [String valor]
+@init { $valor = ""; }:
+                 '^' IDENT outros_ident {$valor = $IDENT.getText() + $outros_ident.ident;} dimensao
+                 | IDENT chamada_partes {$valor = $IDENT.getText() + $chamada_partes.valor;}
+                 | NUM_INT {$valor = $NUM_INT.getText();}
+                 | NUM_REAL {$valor = $NUM_REAL.getText();}
                  | '(' expressao ')';
 
 parcela_nao_unario : '&' IDENT outros_ident dimensao
@@ -150,7 +152,9 @@ parcela_nao_unario : '&' IDENT outros_ident dimensao
 
 outras_parcelas : '%' parcela outras_parcelas | ;
 
-chamada_partes : '(' expressao mais_expressao ')' | outros_ident dimensao | ;
+chamada_partes returns [String valor]
+ @init { $valor = ""; }:
+ '(' expressao mais_expressao ')' | outros_ident dimensao {$valor = $outros_ident.ident;} | ;
 
 exp_relacional : exp_aritmetica op_opcional;
 

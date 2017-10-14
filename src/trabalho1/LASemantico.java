@@ -11,26 +11,26 @@ public class LASemantico extends LABaseVisitor {
     PilhaDeTabelas pilhaDeTabelas;
     String tipo;
 
-    //registros
-    Registro registros;
-    boolean eRegistro = false;
+    //TabelaDeTipos
+    ArrayList<String> TabelaDeTipos;
 
     public LASemantico() {
         grupo = "<619922_619795_619841_552437>";
+        pilhaDeTabelas = new PilhaDeTabelas();
+        pilhaDeTabelas.empilhar(new TabelaDeSimbolos("global"));
+
+        //TabelaDeTipos
+        TabelaDeTipos = new ArrayList<>();
+        TabelaDeTipos.add("inteiro");
+        TabelaDeTipos.add("real");
+        TabelaDeTipos.add("literal");
+        TabelaDeTipos.add("logico");
+
     }
 
     @Override
     public Object visitPrograma(LAParser.ProgramaContext ctx) {
         //declaracoes 'algoritmo' corpo 'fim_algoritmo'
-        pilhaDeTabelas = new PilhaDeTabelas();
-        pilhaDeTabelas.empilhar(new TabelaDeSimbolos("global"));
-
-        //registros
-        registros = new Registro();
-        registros.add("inteiro");
-        registros.add("real");
-        registros.add("literal");
-        registros.add("logico");
 
         if(ctx != null){
             visitDeclaracoes(ctx.declaracoes());
@@ -69,11 +69,10 @@ public class LASemantico extends LABaseVisitor {
             visitTipo_basico(ctx.tipo_basico()); //Adicionar Erros
             visitValor_constante(ctx.valor_constante());
         }else if (ctx.getText().startsWith("tipo")){
-            //registros
-            registros.add(ctx.IDENT().getText());
+            //TabelaDeTipos
+            TabelaDeTipos.add(ctx.IDENT().getText());
             visitTipo(ctx.tipo());
         }
-
         return null;
     }
 
@@ -81,11 +80,9 @@ public class LASemantico extends LABaseVisitor {
     public String visitVariavel(LAParser.VariavelContext ctx) {
         //variavel : IDENT dimensao mais_var ':' tipo;
         if(ctx.children != null){
-            visitDimensao(ctx.dimensao());
-            visitMais_var(ctx.mais_var());
             tipo = visitTipo(ctx.tipo());
 
-            if(pilhaDeTabelas.existeSimbolo(ctx.IDENT().getText()) || registros.achouTipo(ctx.IDENT().getText())){
+            if(pilhaDeTabelas.existeSimbolo(ctx.IDENT().getText())|| TabelaDeTipos.contains(ctx.IDENT().getText())){
                 Mensagens.erroVariavelJaDeclarada(ctx.getStart().getLine(), ctx.IDENT().getText());
             }
             else{
@@ -94,16 +91,18 @@ public class LASemantico extends LABaseVisitor {
 
             if(ctx.mais_var() != null){
                 for(int i = 0; i < ctx.mais_var().IDENT().size(); i++){
-                    if(!pilhaDeTabelas.existeSimbolo(ctx.mais_var().IDENT().get(i).getText()) && !registros.achouTipo(ctx.mais_var().IDENT().get(i).getText())){
-                        pilhaDeTabelas.topo().adicionarSimbolo(ctx.mais_var().IDENT().get(i).toString(), tipo, "variavel");
-                    }
-                    else{
+                    if(!pilhaDeTabelas.existeSimbolo(ctx.mais_var().IDENT().get(i).getText())){
+                        pilhaDeTabelas.topo().adicionarSimbolo(ctx.mais_var().IDENT().get(i).getText(), tipo, "variavel");
+                    }else {
                         Token token = ctx.mais_var().IDENT().get(i).getSymbol();
                         int line = token.getLine();
                         Mensagens.erroVariavelJaDeclarada(line, ctx.mais_var().IDENT().get(i).toString());
                     }
                 }
             }
+
+            visitDimensao(ctx.dimensao());
+            visitMais_var(ctx.mais_var());
         }
 
         return null;
@@ -115,8 +114,9 @@ public class LASemantico extends LABaseVisitor {
         if(ctx.getText().startsWith(",")){
             for(int i = 0; i < ctx.dimensao().size(); i++){
                 LAParser.DimensaoContext dimensaoContext = ctx.dimensao().get(i);
-                visitDimensao(dimensaoContext);
+                visitDimensao(dimensaoContext); //Adicionar Erros //Pegar o Tipo do visitVariavel
             }
+
         }
         return null;
     }
@@ -127,13 +127,25 @@ public class LASemantico extends LABaseVisitor {
 
         //por meio do G4, junta-se os outros identificadores e ponteiros no indentificador
         if(ctx.children != null){
-            if(!pilhaDeTabelas.existeSimbolo(ctx.ident)){
-                Mensagens.erroVariavelNaoExiste(ctx.linha, ctx.ident);
-            }
-
             visitPonteiros_opcionais(ctx.ponteiros_opcionais()); //Adicionar Erros
             visitDimensao(ctx.dimensao());
             visitOutros_ident(ctx.outros_ident());
+
+            String ident = ctx.ident;
+            String[]array = ident.split("\\.");
+
+            if(array.length == 2){
+                for (int i = 0; i < array.length; i++){
+                    if(!pilhaDeTabelas.topo().existeSimbolo(array[i])){
+                        Mensagens.erroVariavelNaoExiste(ctx.start.getLine(), ctx.ident);
+                    }
+                }
+            }
+            else{
+                if(!pilhaDeTabelas.existeSimbolo(ctx.ident)) {
+                    Mensagens.erroVariavelNaoExiste(ctx.start.getLine(), ctx.ident);
+                }
+            }
         }
         return null;
     }
@@ -141,16 +153,20 @@ public class LASemantico extends LABaseVisitor {
     @Override
     public String visitPonteiros_opcionais(LAParser.Ponteiros_opcionaisContext ctx) {
         //ponteiros_opcionais : '^' ponteiros_opcionais | ;
-        if(ctx.children != null)
-            visitPonteiros_opcionais(ctx.ponteiros_opcionais());
+        if(ctx.children != null){
+            //visitPonteiros_opcionais(ctx.ponteiros_opcionais());
+        }
+
         return null;
     }
 
     @Override
     public String visitOutros_ident(LAParser.Outros_identContext ctx) {
         //outros_ident: '.' identificador | ;
-        if(ctx.children != null)
-            visitIdentificador(ctx.identificador());
+        if(ctx.children != null){
+            //visitIdentificador(ctx.identificador());
+        }
+
         return null;
     }
 
@@ -169,18 +185,22 @@ public class LASemantico extends LABaseVisitor {
         //tipo: registro | tipo_estendido;
         if(ctx.registro() != null){
             visitRegistro(ctx.registro());
-            return "registro";
+            return visitTipo(ctx.registro().variavel().tipo());
         }
-        else
+        else{
             return visitTipo_estendido(ctx.tipo_estendido());
+        }
+
     }
 
     @Override
     public String visitMais_ident(LAParser.Mais_identContext ctx) {
         //mais_ident: ',' identificador mais_ident | ;
         if(ctx.children != null){
-            visitIdentificador(ctx.identificador());
-            visitMais_ident(ctx.mais_ident());
+            for(int i = 0; i < ctx.identificador().size(); i++){
+                LAParser.IdentificadorContext identificadorContext = ctx.identificador().get(i);
+                visitIdentificador(identificadorContext);
+            }
         }
         return null;
     }
@@ -189,8 +209,10 @@ public class LASemantico extends LABaseVisitor {
     public String visitMais_variaveis(LAParser.Mais_variaveisContext ctx) {
         //mais_variaveis: variavel mais_variaveis | ;
         if(ctx.children != null){
-            visitVariavel(ctx.variavel());
-            visitMais_variaveis(ctx.mais_variaveis());
+            for(int i = 0; i < ctx.variavel().size(); i++){
+                LAParser.VariavelContext variavelContext = ctx.variavel().get(i);
+                visitVariavel(variavelContext);
+            }
         }
         return null;
     }
@@ -207,19 +229,20 @@ public class LASemantico extends LABaseVisitor {
         if(ctx.tipo_basico() != null){
             return ctx.tipo_basico().getText();
         }
+
         else {
-            //registros
-            if (!registros.achouTipo(ctx.IDENT().getText())) { //adicionar posteriormente registro
+            //TabelaDeTipos
+            if (!TabelaDeTipos.contains(ctx.IDENT().getText())) { //adicionar posteriormente registro
                 Mensagens.tipoNaoDeclarado(ctx.getStart().getLine(), ctx.IDENT().getText());
             }
             else{
-                eRegistro = true;
                 return ctx.IDENT().getText();
             }
 
         }
         return null;
     }
+
 
     @Override
     public String visitTipo_estendido(LAParser.Tipo_estendidoContext ctx) {
@@ -378,9 +401,23 @@ public class LASemantico extends LABaseVisitor {
             visitDimensao(ctx.dimensao());
             visitExpressao(ctx.expressao());
         }else if(ctx.IDENT() != null){
-            if(!pilhaDeTabelas.existeSimbolo(ctx.IDENT().getText()))
-                Mensagens.erroVariavelNaoExiste(ctx.start.getLine(), ctx.IDENT().getText());
             visitChamada_atribuicao(ctx.chamada_atribuicao());
+
+            String ident = ctx.IDENT().getText();
+            String[]array = ident.split("\\.");
+
+            if(array.length == 2){
+                for (int i = 0; i < array.length; i++){
+                    if(!pilhaDeTabelas.topo().existeSimbolo(array[i])){
+                        Mensagens.erroVariavelNaoExiste(ctx.start.getLine(),  ctx.IDENT().getText());
+                    }
+                }
+            }
+            else{
+                if(!pilhaDeTabelas.existeSimbolo( ctx.IDENT().getText()))
+                    Mensagens.erroVariavelNaoExiste(ctx.start.getLine(),  ctx.IDENT().getText());
+            }
+
         }else if(ctx.getText().startsWith("retorne")){
             visitExpressao(ctx.expressao());
         }
@@ -573,16 +610,40 @@ public class LASemantico extends LABaseVisitor {
                 | '(' expressao ')';*/
 
         if (ctx.getText().startsWith("^")) {
-            if(!pilhaDeTabelas.topo().existeSimbolo(ctx.identpu_1.getText())){
-                Mensagens.erroVariavelNaoExiste(ctx.start.getLine(), ctx.IDENT().getText());
+            String ident = ctx.valor;
+            String[]array = ident.split("\\.");
+
+            if(array.length == 2){
+                for (int i = 0; i < array.length; i++){
+                    if(!pilhaDeTabelas.topo().existeSimbolo(array[i])){
+                        Mensagens.erroVariavelNaoExiste(ctx.start.getLine(), ctx.valor);
+                    }
+                }
             }
+            else{
+                if(!pilhaDeTabelas.existeSimbolo(ctx.valor))
+                    Mensagens.erroVariavelNaoExiste(ctx.start.getLine(), ctx.valor);
+            }
+
             visitOutros_ident(ctx.outros_ident());
             visitDimensao(ctx.dimensao());
 
         } else if (ctx.IDENT() != null) {
-            if(!pilhaDeTabelas.topo().existeSimbolo(ctx.identpu_2.getText())){
-                Mensagens.erroVariavelNaoExiste(ctx.start.getLine(), ctx.IDENT().getText());
+            String ident = ctx.valor;
+            String[]array = ident.split("\\.");
+
+            if(array.length == 2){
+                for (int i = 0; i < array.length; i++){
+                    if(!pilhaDeTabelas.topo().existeSimbolo(array[i])){
+                        Mensagens.erroVariavelNaoExiste(ctx.start.getLine(), ctx.valor);
+                    }
+                }
             }
+            else{
+                if(!pilhaDeTabelas.existeSimbolo(ctx.valor))
+                    Mensagens.erroVariavelNaoExiste(ctx.start.getLine(), ctx.valor);
+            }
+
             visitChamada_partes(ctx.chamada_partes());
 
         } else if (ctx.getText().startsWith("(")) {
