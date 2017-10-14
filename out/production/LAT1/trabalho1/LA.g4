@@ -87,14 +87,13 @@ declaracoes_locais : declaracao_local declaracoes_locais | ;
 
 corpo : declaracoes_locais comandos;
 
-comandos : cmd comandos | ;
-
+comandos : (cmd)* ;
 
 cmd : 'leia' '(' identificador mais_ident')'
 | 'escreva' '(' expressao mais_expressao ')'
 | 'se' expressao 'entao' comandos senao_opcional 'fim_se'
 | 'caso' exp_aritmetica 'seja' selecao senao_opcional 'fim_caso'
-| 'para' IDENT '<-' exp_aritmetica 'ate' exp_aritmetica 'faca' comandos 'fim_para'
+| 'para' IDENT '<-' exp1=exp_aritmetica 'ate' exp2=exp_aritmetica 'faca' comandos 'fim_para'
 | 'enquanto' expressao 'faca' comandos 'fim_enquanto'
 | 'faca' comandos 'ate' expressao
 | '^' IDENT outros_ident dimensao '<-' expressao

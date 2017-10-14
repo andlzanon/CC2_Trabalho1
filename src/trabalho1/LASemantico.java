@@ -32,7 +32,7 @@ public class LASemantico extends LABaseVisitor {
     public Object visitPrograma(LAParser.ProgramaContext ctx) {
         //declaracoes 'algoritmo' corpo 'fim_algoritmo'
 
-        if(ctx != null){
+        if(ctx.children != null){
             visitDeclaracoes(ctx.declaracoes());
             visitCorpo(ctx.corpo());
         }
@@ -103,6 +103,8 @@ public class LASemantico extends LABaseVisitor {
 
             visitDimensao(ctx.dimensao());
             visitMais_var(ctx.mais_var());
+
+            //System.out.println(pilhaDeTabelas.topo().toString());
         }
 
         return null;
@@ -127,7 +129,7 @@ public class LASemantico extends LABaseVisitor {
 
         //por meio do G4, junta-se os outros identificadores e ponteiros no indentificador
         if(ctx.children != null){
-            visitPonteiros_opcionais(ctx.ponteiros_opcionais()); //Adicionar Erros
+            visitPonteiros_opcionais(ctx.ponteiros_opcionais());
             visitDimensao(ctx.dimensao());
             visitOutros_ident(ctx.outros_ident());
 
@@ -147,6 +149,7 @@ public class LASemantico extends LABaseVisitor {
                 }
             }
         }
+
         return null;
     }
 
@@ -356,10 +359,12 @@ public class LASemantico extends LABaseVisitor {
 
     @Override
     public String visitComandos(LAParser.ComandosContext ctx) {
-        //comandos : cmd comandos | ;
+        //comandos : (cmd)* ;
         if(ctx.children != null){
-            visitCmd(ctx.cmd());
-            visitComandos(ctx.comandos());
+            for(int i = 0; i < ctx.cmd().size(); i++){
+                LAParser.CmdContext cmdContext = ctx.cmd().get(i);
+                visitCmd(cmdContext);
+            }
         }
         return null;
     }
@@ -376,10 +381,10 @@ public class LASemantico extends LABaseVisitor {
                 | '^' IDENT outros_ident dimensao '<-' expressao
                 | IDENT chamada_atribuicao
                 | 'retorne' expressao;*/
-        if(ctx.getText().startsWith("leia")){
+        if(ctx.getText().startsWith("leia(")){
             visitIdentificador(ctx.identificador());
             visitMais_ident(ctx.mais_ident());
-        }else if (ctx.getText().startsWith("escreva")){
+        }else if (ctx.getText().startsWith("escreva(")){
             visitExpressao(ctx.expressao());
             visitMais_expressao(ctx.mais_expressao());
         }else if (ctx.getText().startsWith("se")){
@@ -387,8 +392,8 @@ public class LASemantico extends LABaseVisitor {
             visitComandos(ctx.comandos());
             visitSenao_opcional(ctx.senao_opcional());
         }else if(ctx.getText().startsWith("para")){
-            visitExp_aritmetica(ctx.exp_aritmetica().get(0));
-            visitExp_aritmetica(ctx.exp_aritmetica().get(1));
+            visitExp_aritmetica(ctx.exp1);
+            visitExp_aritmetica(ctx.exp2);
             visitComandos(ctx.comandos());
         }else if(ctx.getText().startsWith("enquanto")){
             visitExpressao(ctx.expressao());
@@ -419,6 +424,9 @@ public class LASemantico extends LABaseVisitor {
             }
 
         }else if(ctx.getText().startsWith("retorne")){
+            if(pilhaDeTabelas.topo().getEscopo().equals("global")){
+                Mensagens.retornoEscopoErrado(ctx.start.getLine());
+            }
             visitExpressao(ctx.expressao());
         }
         return null;

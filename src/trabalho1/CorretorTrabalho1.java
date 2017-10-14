@@ -29,7 +29,7 @@ public class CorretorTrabalho1 {
 
         /*testa exemplo unico
         File file = new File("C:\\Users\\André\\Documents\\GitHub\\CC2_Trabalho1\\src\\trabalho1\\casosDeTesteT1\\casosDeTesteT1\\" +
-                "2.arquivos_com_erros_semanticos\\entrada\\1.algoritmo_2-2_apostila_LA.txt");
+                "2.arquivos_com_erros_semanticos\\entrada\\15.algoritmo_11-1_apostila_LA.txt");
         ANTLRInputStream input = new ANTLRInputStream(new FileInputStream(file));
         LALexer lexer = new LALexer(input);
         lexer.removeErrorListeners();

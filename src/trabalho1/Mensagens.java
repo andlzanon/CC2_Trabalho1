@@ -39,4 +39,15 @@ public class Mensagens {
 
         Saida.println(erro);
     }
+
+    public static void retornoEscopoErrado(int numLinha){
+        String erro = "Linha " +numLinha + ": comando retorne nao permitido nesse escopo";
+
+        if (!primeiro){
+            erro = "\n" + erro;
+        }
+        primeiro = false;
+
+        Saida.println(erro);
+    }
 }
