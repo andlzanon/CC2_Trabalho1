@@ -9,24 +9,28 @@ import java.util.ArrayList;
 public class LASemantico extends LABaseVisitor {
     String grupo;
     PilhaDeTabelas pilhaDeTabelas;
+    //declaracao global de tipo para facilitar em momentos como em declaracoes de funcoes e procediemntos
     String tipo;
+    //variaveis que definem se o escopo atual e um procedimento ou funcao
     boolean eProc, eFunc;
 
     //TabelaDeTipos
     ArrayList<String> TabelaDeTipos;
 
     public LASemantico() {
+        //inicializacoes
         grupo = "<619922_619795_619841_552437>";
         pilhaDeTabelas = new PilhaDeTabelas();
         pilhaDeTabelas.empilhar(new TabelaDeSimbolos("global"));
 
-        //TabelaDeTipos
+        //TabelaDeTipos, adiciona ja os tipos basicos
         TabelaDeTipos = new ArrayList<>();
         TabelaDeTipos.add("inteiro");
         TabelaDeTipos.add("real");
         TabelaDeTipos.add("literal");
         TabelaDeTipos.add("logico");
 
+        //escopo e global, logo nao eProc e eFunc sao falsos
         eProc = false;
         eFunc = false;
     }
@@ -34,7 +38,6 @@ public class LASemantico extends LABaseVisitor {
     @Override
     public Object visitPrograma(LAParser.ProgramaContext ctx) {
         //declaracoes 'algoritmo' corpo 'fim_algoritmo'
-
         if(ctx.children != null){
             visitDeclaracoes(ctx.declaracoes());
             visitCorpo(ctx.corpo());
@@ -44,6 +47,7 @@ public class LASemantico extends LABaseVisitor {
 
     @Override
     public String visitDeclaracoes(LAParser.DeclaracoesContext ctx) {
+        //declaracoes : decl_local_global declaracoes |  ;
         if(ctx.children != null){
             visitDecl_local_global(ctx.decl_local_global());
             visitDeclaracoes(ctx.declaracoes());
@@ -53,6 +57,7 @@ public class LASemantico extends LABaseVisitor {
 
     @Override
     public String visitDecl_local_global(LAParser.Decl_local_globalContext ctx) {
+        //decl_local_global : declaracao_local | declaracao_global;
         if(ctx.declaracao_local() != null)
             visitDeclaracao_local(ctx.declaracao_local());
         else if (ctx.declaracao_global() != null)
@@ -79,7 +84,7 @@ public class LASemantico extends LABaseVisitor {
                 pilhaDeTabelas.topo().adicionarSimbolo(ctx.IDENT().getText(), tipo, "constante");
 
         }else if (ctx.getText().startsWith("tipo")){
-            //TabelaDeTipos
+            //adiciona o novo tipo na tabela de tipos. Ex.: tVinho
             TabelaDeTipos.add(ctx.IDENT().getText());
             visitTipo(ctx.tipo());
         }
@@ -90,20 +95,26 @@ public class LASemantico extends LABaseVisitor {
     public String visitVariavel(LAParser.VariavelContext ctx) {
         //variavel : IDENT dimensao mais_var ':' tipo;
         if(ctx.children != null){
+            //a variavel tipo recebe o tipo da variavel visitando a regra Tipo
             tipo = visitTipo(ctx.tipo());
 
+            //se o IDENT ja existe na pilhaDeTabelas ou na TabelaDeTipos entao o IDENT ja foi delcarado anteriormente
             if(pilhaDeTabelas.existeSimbolo(ctx.IDENT().getText())|| TabelaDeTipos.contains(ctx.IDENT().getText())){
                 Mensagens.erroVariavelJaDeclarada(ctx.getStart().getLine(), ctx.IDENT().getText());
             }
+            //senao adiciona-se o a varivael no escopo atual
             else{
                 pilhaDeTabelas.topo().adicionarSimbolo(ctx.IDENT().getText(), tipo, "variavel");
             }
 
+            //visita o mais_var para adicionar as outras variaveis separadas por ','
             if(ctx.mais_var() != null){
                 for(int i = 0; i < ctx.mais_var().IDENT().size(); i++){
+                    //se nao existe na pilhaDeTabelas adiciona no escopo atual
                     if(!pilhaDeTabelas.existeSimbolo(ctx.mais_var().IDENT().get(i).getText())){
                         pilhaDeTabelas.topo().adicionarSimbolo(ctx.mais_var().IDENT().get(i).getText(), tipo, "variavel");
                     }else {
+                        //metodo mais preciso de identificar a linha ja que pode declarando multiplas variaveis poode-se pular linhas
                         Token token = ctx.mais_var().IDENT().get(i).getSymbol();
                         int line = token.getLine();
                         Mensagens.erroVariavelJaDeclarada(line, ctx.mais_var().IDENT().get(i).toString());
@@ -114,6 +125,7 @@ public class LASemantico extends LABaseVisitor {
             visitDimensao(ctx.dimensao());
             visitMais_var(ctx.mais_var());
 
+            //Para debug:
             //System.out.println(pilhaDeTabelas.topo().toString());
         }
 
@@ -122,11 +134,11 @@ public class LASemantico extends LABaseVisitor {
 
     @Override
     public String visitMais_var(LAParser.Mais_varContext ctx) {
-        //mais_var : ',' IDENT dimensao mais_var | ;
+        //mais_var: (',' IDENT dimensao)* ;
         if(ctx.getText().startsWith(",")){
             for(int i = 0; i < ctx.dimensao().size(); i++){
                 LAParser.DimensaoContext dimensaoContext = ctx.dimensao().get(i);
-                visitDimensao(dimensaoContext); //Adicionar Erros //Pegar o Tipo do visitVariavel
+                visitDimensao(dimensaoContext);
             }
 
         }
@@ -135,26 +147,36 @@ public class LASemantico extends LABaseVisitor {
 
     @Override
     public String visitIdentificador(LAParser.IdentificadorContext ctx) {
-        //identificador : ponteiros_opcionais IDENT dimensao outros_ident;
+        /* identificador returns [String ident, int linha] :
+         * ponteiros_opcionais IDENT dimensao outros_ident
+         * { $ident = $ponteiros_opcionais.ponteiro + $IDENT.getText() + $outros_ident.ident; $linha = $IDENT.line; }; */
 
-        //por meio do G4, junta-se os outros identificadores e ponteiros no indentificador
+
+        //conforme acima, por meio do G4, junta-se os outros identificadores e ponteiros no indentificador
         if(ctx.children != null){
             visitPonteiros_opcionais(ctx.ponteiros_opcionais());
             visitDimensao(ctx.dimensao());
             visitOutros_ident(ctx.outros_ident());
 
+            //ident recebe a uma String que e relativa aos ponteiros_opcionais + texto do identificador + "." + outros_ident
             String ident = ctx.ident;
+            //separa a string a partir do ponto
             String[]array = ident.split("\\.");
 
             //se nao e funcao ou procedimento e necessario verificar
             if(!eProc && !eFunc){
+                //se quando separado o tamanho for 2, entao trata-se o registro
                 if(array.length == 2){
                     for (int i = 0; i < array.length; i++){
+                        //as variaveis do registro estao sendo armazenadas como variaveis, assim como o tipo do registro
+                        //dessa maneira, verifica se ambos os lados do registro ja estao declarados
+                        //e se nao estiver, um erro e acusado
                         if(!pilhaDeTabelas.topo().existeSimbolo(array[i])){
                             Mensagens.erroVariavelNaoExiste(ctx.start.getLine(), ctx.ident);
                         }
                     }
                 }
+                //tratemento de identicador que nao e registro
                 else{
                     if(!pilhaDeTabelas.existeSimbolo(ctx.ident)) {
                         Mensagens.erroVariavelNaoExiste(ctx.start.getLine(), ctx.ident);
@@ -163,6 +185,7 @@ public class LASemantico extends LABaseVisitor {
             }
 
             //somente vem para esse else quando trata-se dos parâmetros uma funcao ou de um procedimento
+            //assim, sempre sao adicionados na pilha de tabelas
             else {
                 pilhaDeTabelas.topo().adicionarSimbolo(ctx.ident, tipo, "variavel");
             }
@@ -174,7 +197,12 @@ public class LASemantico extends LABaseVisitor {
 
     @Override
     public String visitPonteiros_opcionais(LAParser.Ponteiros_opcionaisContext ctx) {
-        //ponteiros_opcionais : '^' ponteiros_opcionais | ;
+        /* ponteiros_opcionais returns [String ponteiro]
+         * @init { $ponteiro = ""; } :
+         * '^' {$ponteiro = "^";}
+         * ponteiros_opcionais | ; */
+
+        //no g4 ja visita-se os ponteiros adicionais para adiciona-los na string ident
         if(ctx.children != null){
             //visitPonteiros_opcionais(ctx.ponteiros_opcionais());
         }
@@ -184,7 +212,12 @@ public class LASemantico extends LABaseVisitor {
 
     @Override
     public String visitOutros_ident(LAParser.Outros_identContext ctx) {
-        //outros_ident: '.' identificador | ;
+        /*outros_ident returns [String ident]
+         * @init { $ident = ""; }:
+         * '.' identificador {$ident = "." + $identificador.ident;}
+         * | ; */
+
+        //no g4 ja visita-se os outros_ident para adiciona-los na string ident
         if(ctx.children != null){
             //visitIdentificador(ctx.identificador());
         }
@@ -205,8 +238,10 @@ public class LASemantico extends LABaseVisitor {
     @Override
     public String visitTipo(LAParser.TipoContext ctx) {
         //tipo: registro | tipo_estendido;
+
         if(ctx.registro() != null){
             visitRegistro(ctx.registro());
+            //retorna o tipo da variavel do registro
             return visitTipo(ctx.registro().variavel().tipo());
         }
         else{
@@ -217,7 +252,8 @@ public class LASemantico extends LABaseVisitor {
 
     @Override
     public String visitMais_ident(LAParser.Mais_identContext ctx) {
-        //mais_ident: ',' identificador mais_ident | ;
+        //mais_ident: mais_ident :(',' identificador)*;
+
         if(ctx.children != null){
             for(int i = 0; i < ctx.identificador().size(); i++){
                 LAParser.IdentificadorContext identificadorContext = ctx.identificador().get(i);
@@ -229,7 +265,8 @@ public class LASemantico extends LABaseVisitor {
 
     @Override
     public String visitMais_variaveis(LAParser.Mais_variaveisContext ctx) {
-        //mais_variaveis: variavel mais_variaveis | ;
+        //mais_variaveis: mais_variaveis : (variavel)* ;
+
         if(ctx.children != null){
             for(int i = 0; i < ctx.variavel().size(); i++){
                 LAParser.VariavelContext variavelContext = ctx.variavel().get(i);
@@ -242,18 +279,22 @@ public class LASemantico extends LABaseVisitor {
     @Override
     public String visitTipo_basico(LAParser.Tipo_basicoContext ctx) {
         //tipo_basico: 'literal'|'inteiro'|'real'|'logico';
+        //retorna o texto. Sobe na arvore caso precise
         return ctx.getText();
     }
 
     @Override
     public String visitTipo_basico_ident(LAParser.Tipo_basico_identContext ctx) {
         //tipo_basico_ident: tipo_basico | IDENT;
+
         if(ctx.tipo_basico() != null){
+            //retorna texto do tipo basico
             return ctx.tipo_basico().getText();
         }
 
         else {
-            //TabelaDeTipos
+            //verifica na TabelaDeTipos se o tipo IDENT.getText() existe
+            //se nao existir, erro!
             if (!TabelaDeTipos.contains(ctx.IDENT().getText())) { //adicionar posteriormente registro
                 Mensagens.tipoNaoDeclarado(ctx.getStart().getLine(), ctx.IDENT().getText());
             }
@@ -294,8 +335,9 @@ public class LASemantico extends LABaseVisitor {
 
     @Override
     public String visitDeclaracao_global(LAParser.Declaracao_globalContext ctx) {
-        // declaracao_global: 'procedimento' IDENT '(' parametros_opcional ')' declaracoes_locais comandos 'fim_procedimento'
-        //                |'funcao' IDENT '(' parametros_opcional ')' ':' tipo_estendido declaracoes_locais comandos 'fim_funcao';
+        /* declaracao_global: 'procedimento' IDENT '(' parametros_opcional ')' declaracoes_locais comandos 'fim_procedimento'
+         *                |'funcao' IDENT '(' parametros_opcional ')' ':' tipo_estendido declaracoes_locais comandos 'fim_funcao'; */
+
         if(ctx.getText().startsWith("procedimento")){
             //e procedimento = true
             eProc = true;
@@ -315,14 +357,16 @@ public class LASemantico extends LABaseVisitor {
                 //acha tipo dos parametros da funcao
                 tipo = ctx.parametros_opcional().parametro().tipo_estendido().getText();
             }
-            visitParametros_opcional(ctx.parametros_opcional()); //Adicionar Erro
+
+            visitParametros_opcional(ctx.parametros_opcional());
             visitDeclaracoes_locais(ctx.declaracoes_locais());
             visitComandos(ctx.comandos());
             //fim da funcao. E proc torna-se falso
             eProc = false;
-            //desempilha
+            //desempilha escopo do procedimento
             pilhaDeTabelas.desempilhar();
         }else{
+            //analogo ao do procedimento
             eFunc = true;
             if(pilhaDeTabelas.existeSimbolo(ctx.identFunc.getText())){
                 Mensagens.erroVariavelJaDeclarada(ctx.start.getLine(), ctx.IDENT().getText());
@@ -334,7 +378,8 @@ public class LASemantico extends LABaseVisitor {
                 pilhaDeTabelas.empilhar(tabelaFunc);
                 tipo = ctx.parametros_opcional().parametro().tipo_estendido().getText();
             }
-            visitParametros_opcional(ctx.parametros_opcional()); //Adicionar Erro
+
+            visitParametros_opcional(ctx.parametros_opcional());
             visitTipo_estendido(ctx.tipo_estendido());
             visitDeclaracoes_locais(ctx.declaracoes_locais());
             visitComandos(ctx.comandos());
@@ -416,15 +461,18 @@ public class LASemantico extends LABaseVisitor {
                 | 'escreva' '(' expressao mais_expressao ')'
                 | 'se' expressao 'entao' comandos senao_opcional 'fim_se'
                 | 'caso' exp_aritmetica 'seja' selecao senao_opcional 'fim_caso'
-                | 'para' IDENT '<-' exp_aritmetica 'ate' exp_aritmetica 'faca' comandos 'fim_para'
+                | 'para' IDENT '<-' exp1=exp_aritmetica 'ate' exp2=exp_aritmetica 'faca' comandos 'fim_para'
                 | 'enquanto' expressao 'faca' comandos 'fim_enquanto'
                 | 'faca' comandos 'ate' expressao
                 | '^' IDENT outros_ident dimensao '<-' expressao
                 | IDENT chamada_atribuicao
                 | 'retorne' expressao;*/
+
+        //e necessario ser leia( pq no caso 15, por exemplo, uma funcao e declarada como leiaVinho
         if(ctx.getText().startsWith("leia(")){
             visitIdentificador(ctx.identificador());
             visitMais_ident(ctx.mais_ident());
+            //e necessario ser escreva( pq no caso 15, por exemplo, uma funcao e declarada como escrevaVinho
         }else if (ctx.getText().startsWith("escreva(")){
             visitExpressao(ctx.expressao());
             visitMais_expressao(ctx.mais_expressao());
@@ -452,6 +500,7 @@ public class LASemantico extends LABaseVisitor {
             String ident = ctx.IDENT().getText();
             String[]array = ident.split("\\.");
 
+            //analogo ao caso do visitIdentificador. Verifica se o tamanho do array e 2 devido ao tratamento de registros
             if(array.length == 2){
                 for (int i = 0; i < array.length; i++){
                     if(!pilhaDeTabelas.topo().existeSimbolo(array[i])){
@@ -465,6 +514,8 @@ public class LASemantico extends LABaseVisitor {
             }
 
         }else if(ctx.getText().startsWith("retorne")){
+            //unico local que retorne e possivel e em funcoes
+            //logo, se esta no escopo global ou em procedimento. ERRO!
             if(pilhaDeTabelas.topo().getEscopo().equals("global") || eProc){
                 Mensagens.retornoEscopoErrado(ctx.start.getLine());
             }
@@ -652,13 +703,16 @@ public class LASemantico extends LABaseVisitor {
 
     @Override
     public String visitParcela_unario(LAParser.Parcela_unarioContext ctx) {
-        /*parcela_unario : '^' IDENT outros_ident dimensao
-                | IDENT chamada_partes
-                | NUM_INT
-                | NUM_REAL
-                | '(' expressao ')';*/
+        /*parcela_unario returns [String valor]
+         *   @init { $valor = ""; }:
+         *        '^' IDENT outros_ident {$valor = $IDENT.getText() + $outros_ident.ident;} dimensao
+         *        | IDENT chamada_partes {$valor = $IDENT.getText() + $chamada_partes.valor;}
+         *        | NUM_INT {$valor = $NUM_INT.getText();}
+         *        | NUM_REAL {$valor = $NUM_REAL.getText();}
+         *        | '(' expressao ')';  */
 
         if (ctx.getText().startsWith("^")) {
+            //analogo ao visitIdentificador()
             String ident = ctx.valor;
             String[]array = ident.split("\\.");
 
@@ -678,6 +732,7 @@ public class LASemantico extends LABaseVisitor {
             visitDimensao(ctx.dimensao());
 
         } else if (ctx.IDENT() != null) {
+            //analogo ao visitIdentificador()
             String ident = ctx.valor;
             String[]array = ident.split("\\.");
 
@@ -712,6 +767,7 @@ public class LASemantico extends LABaseVisitor {
     public String visitParcela_nao_unario(LAParser.Parcela_nao_unarioContext ctx) {
         //parcela_nao_unario : '&' IDENT outros_ident dimensao | CADEIA;
         if (ctx.outros_ident() != null) {
+            //verifica se existe o IDENT na pilhaDeTabelas
             if(!pilhaDeTabelas.existeSimbolo(ctx.IDENT().getText())){
                 Mensagens.erroVariavelNaoExiste(ctx.start.getLine(), ctx.IDENT().getText());
             }
