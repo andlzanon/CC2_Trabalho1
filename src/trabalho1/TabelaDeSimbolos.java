@@ -13,6 +13,13 @@ public class TabelaDeSimbolos {
         simbolos = new ArrayList<EntradaTabelaDeSimbolos>();
         this.escopo = escopo;
     }
+
+    //copia toda a tabela de simbolos do escopo global para o da funcao
+    public void CopiaVariaveis(TabelaDeSimbolos ts){
+        for(EntradaTabelaDeSimbolos etds:simbolos) {
+            ts.adicionarSimbolo(etds.getNome(), etds.getTipoVar(), etds.getTipo());
+        }
+    }
     
     public void adicionarSimbolo(String nome, String tipoVar, String tipo) {
         simbolos.add(new EntradaTabelaDeSimbolos(nome, tipoVar, tipo));

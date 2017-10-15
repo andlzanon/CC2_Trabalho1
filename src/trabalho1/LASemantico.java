@@ -10,6 +10,7 @@ public class LASemantico extends LABaseVisitor {
     String grupo;
     PilhaDeTabelas pilhaDeTabelas;
     String tipo;
+    boolean eProc, eFunc;
 
     //TabelaDeTipos
     ArrayList<String> TabelaDeTipos;
@@ -26,6 +27,8 @@ public class LASemantico extends LABaseVisitor {
         TabelaDeTipos.add("literal");
         TabelaDeTipos.add("logico");
 
+        eProc = false;
+        eFunc = false;
     }
 
     @Override
@@ -66,8 +69,15 @@ public class LASemantico extends LABaseVisitor {
         if(ctx.getText().startsWith("declare"))
             visitVariavel(ctx.variavel());
         else if (ctx.getText().startsWith("constante")){
-            visitTipo_basico(ctx.tipo_basico()); //Adicionar Erros
+            tipo = visitTipo_basico(ctx.tipo_basico());
             visitValor_constante(ctx.valor_constante());
+
+            //verifica se constante esta na tabela de simbolos. se nao esta adiciona na tabela
+            if(pilhaDeTabelas.existeSimbolo(ctx.IDENT().getText()))
+                Mensagens.erroVariavelJaDeclarada(ctx.start.getLine(), ctx.IDENT().getText());
+            else
+                pilhaDeTabelas.topo().adicionarSimbolo(ctx.IDENT().getText(), tipo, "constante");
+
         }else if (ctx.getText().startsWith("tipo")){
             //TabelaDeTipos
             TabelaDeTipos.add(ctx.IDENT().getText());
@@ -136,18 +146,27 @@ public class LASemantico extends LABaseVisitor {
             String ident = ctx.ident;
             String[]array = ident.split("\\.");
 
-            if(array.length == 2){
-                for (int i = 0; i < array.length; i++){
-                    if(!pilhaDeTabelas.topo().existeSimbolo(array[i])){
+            //se nao e funcao ou procedimento e necessario verificar
+            if(!eProc && !eFunc){
+                if(array.length == 2){
+                    for (int i = 0; i < array.length; i++){
+                        if(!pilhaDeTabelas.topo().existeSimbolo(array[i])){
+                            Mensagens.erroVariavelNaoExiste(ctx.start.getLine(), ctx.ident);
+                        }
+                    }
+                }
+                else{
+                    if(!pilhaDeTabelas.existeSimbolo(ctx.ident)) {
                         Mensagens.erroVariavelNaoExiste(ctx.start.getLine(), ctx.ident);
                     }
                 }
             }
-            else{
-                if(!pilhaDeTabelas.existeSimbolo(ctx.ident)) {
-                    Mensagens.erroVariavelNaoExiste(ctx.start.getLine(), ctx.ident);
-                }
+
+            //somente vem para esse else quando trata-se dos parâmetros uma funcao ou de um procedimento
+            else {
+                pilhaDeTabelas.topo().adicionarSimbolo(ctx.ident, tipo, "variavel");
             }
+
         }
 
         return null;
@@ -278,26 +297,48 @@ public class LASemantico extends LABaseVisitor {
         // declaracao_global: 'procedimento' IDENT '(' parametros_opcional ')' declaracoes_locais comandos 'fim_procedimento'
         //                |'funcao' IDENT '(' parametros_opcional ')' ':' tipo_estendido declaracoes_locais comandos 'fim_funcao';
         if(ctx.getText().startsWith("procedimento")){
+            //e procedimento = true
+            eProc = true;
+            //verifica se nome da funcao ja existe na pilha de tabelas
             if(pilhaDeTabelas.existeSimbolo(ctx.identProc.getText())){
                 Mensagens.erroVariavelJaDeclarada(ctx.start.getLine(), ctx.IDENT().getText());
             }
             else{
+                //se nao existe, adiciona o nome no topo
                 pilhaDeTabelas.topo().adicionarSimbolo(ctx.IDENT().getText(), "procedimento", "procedimento");
+                //cria uma nova tabela para o escopo
+                TabelaDeSimbolos tabelaProc = new TabelaDeSimbolos(ctx.IDENT().getText());
+                //copia as variaveis globais para o escopo
+                pilhaDeTabelas.topo().CopiaVariaveis(tabelaProc);
+                //empilha tabela
+                pilhaDeTabelas.empilhar(tabelaProc);
+                //acha tipo dos parametros da funcao
+                tipo = ctx.parametros_opcional().parametro().tipo_estendido().getText();
             }
             visitParametros_opcional(ctx.parametros_opcional()); //Adicionar Erro
             visitDeclaracoes_locais(ctx.declaracoes_locais());
             visitComandos(ctx.comandos());
+            //fim da funcao. E proc torna-se falso
+            eProc = false;
+            //desempilha
+            pilhaDeTabelas.desempilhar();
         }else{
+            eFunc = true;
             if(pilhaDeTabelas.existeSimbolo(ctx.identFunc.getText())){
                 Mensagens.erroVariavelJaDeclarada(ctx.start.getLine(), ctx.IDENT().getText());
             }
             else{
                 pilhaDeTabelas.topo().adicionarSimbolo(ctx.IDENT().getText(), "funcao", "funcao");
+                TabelaDeSimbolos tabelaFunc = new TabelaDeSimbolos(ctx.IDENT().getText());
+                pilhaDeTabelas.topo().CopiaVariaveis(tabelaFunc);
+                pilhaDeTabelas.empilhar(tabelaFunc);
+                tipo = ctx.parametros_opcional().parametro().tipo_estendido().getText();
             }
             visitParametros_opcional(ctx.parametros_opcional()); //Adicionar Erro
             visitTipo_estendido(ctx.tipo_estendido());
             visitDeclaracoes_locais(ctx.declaracoes_locais());
             visitComandos(ctx.comandos());
+            pilhaDeTabelas.desempilhar();
         }
         return null;
     }
@@ -424,7 +465,7 @@ public class LASemantico extends LABaseVisitor {
             }
 
         }else if(ctx.getText().startsWith("retorne")){
-            if(pilhaDeTabelas.topo().getEscopo().equals("global")){
+            if(pilhaDeTabelas.topo().getEscopo().equals("global") || eProc){
                 Mensagens.retornoEscopoErrado(ctx.start.getLine());
             }
             visitExpressao(ctx.expressao());

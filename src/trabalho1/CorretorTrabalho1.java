@@ -43,7 +43,6 @@ public class CorretorTrabalho1 {
         System.out.println(Saida.getTexto());*/
 
 
-
         //saida do analisador sintatico
         /*File saidaCasoTesteSintatico = new File("C:\\Users\\André\\Documents\\GitHub\\CC2_Trabalho1\\temp\\saidaProduzida\\saidaSintatico\\" + file.getName());
         PrintWriter pw = new PrintWriter(new FileWriter(saidaCasoTesteSintatico));
