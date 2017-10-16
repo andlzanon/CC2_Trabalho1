@@ -50,4 +50,15 @@ public class Mensagens {
 
         Saida.println(erro);
     }
+
+    public static void incompatibilidadeDeTipos(int numLinha, String variavel){
+        String erro = "Linha " +numLinha + ": atribuicao nao compativel para " +variavel;
+
+        if (!primeiro){
+            erro = "\n" + erro;
+        }
+        primeiro = false;
+
+        Saida.println(erro);
+    }
 }

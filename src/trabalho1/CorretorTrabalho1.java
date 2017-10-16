@@ -29,7 +29,7 @@ public class CorretorTrabalho1 {
 
         /*testa exemplo unico
         File file = new File("C:\\CC2_Trabalho1\\src\\trabalho1\\casosDeTesteT1\\casosDeTesteT1\\" +
-                "2.arquivos_com_erros_semanticos\\entrada\\15.algoritmo_11-1_apostila_LA.txt");
+                "2.arquivos_com_erros_semanticos\\entrada\\14.algoritmo_10-1_apostila_LA.txt");
         ANTLRInputStream input = new ANTLRInputStream(new FileInputStream(file));
         LALexer lexer = new LALexer(input);
         lexer.removeErrorListeners();
@@ -49,8 +49,8 @@ public class CorretorTrabalho1 {
         pw.println(saida);
         pw.println("Fim da compilacao");
         pw.close();
-        pw.flush();
-        */
+        pw.flush();*/
+
 
         /*saida do analisador semantico*/
         LASemantico laSemantico = new LASemantico();

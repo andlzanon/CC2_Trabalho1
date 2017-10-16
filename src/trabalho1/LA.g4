@@ -146,7 +146,9 @@ parcela_unario returns [String valor]
                  | NUM_REAL {$valor = $NUM_REAL.getText();}
                  | '(' expressao ')';
 
-parcela_nao_unario : '&' IDENT outros_ident dimensao
+parcela_nao_unario returns [String valor]
+@init { $valor = ""; }:
+                    '&' IDENT outros_ident dimensao {$valor = $IDENT.getText() + $outros_ident.ident;}
                      | CADEIA;
 
 outras_parcelas : ('%' parcela)*;

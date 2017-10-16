@@ -5,7 +5,7 @@ import java.util.List;
 
 public class PilhaDeTabelas {
 
-    private LinkedList<TabelaDeSimbolos> pilha;
+    private static LinkedList<TabelaDeSimbolos> pilha;
 
     public PilhaDeTabelas() {
         pilha = new LinkedList<TabelaDeSimbolos>();
@@ -18,6 +18,7 @@ public class PilhaDeTabelas {
     public TabelaDeSimbolos topo() {
         return pilha.peek();
     }
+
 
     public boolean existeSimbolo(String nome) {
         for (TabelaDeSimbolos ts : pilha) {

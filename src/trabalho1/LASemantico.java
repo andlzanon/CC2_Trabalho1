@@ -8,7 +8,7 @@ import java.util.ArrayList;
  */
 public class LASemantico extends LABaseVisitor {
     String grupo;
-    PilhaDeTabelas pilhaDeTabelas;
+    static PilhaDeTabelas pilhaDeTabelas;
     //declaracao global de tipo para facilitar em momentos como em declaracoes de funcoes e procediemntos
     String tipo;
     //variaveis que definem se o escopo atual e um procedimento ou funcao
@@ -126,7 +126,7 @@ public class LASemantico extends LABaseVisitor {
             visitMais_var(ctx.mais_var());
 
             //Para debug:
-            //System.out.println(pilhaDeTabelas.topo().toString());
+            System.out.println(pilhaDeTabelas.topo().toString());
         }
 
         return null;
@@ -166,7 +166,7 @@ public class LASemantico extends LABaseVisitor {
             //se nao e funcao ou procedimento e necessario verificar
             if(!eProc && !eFunc){
                 //se quando separado o tamanho for 2, entao trata-se o registro
-                if(array.length == 2){
+                if(array.length >= 2){
                     for (int i = 0; i < array.length; i++){
                         //as variaveis do registro estao sendo armazenadas como variaveis, assim como o tipo do registro
                         //dessa maneira, verifica se ambos os lados do registro ja estao declarados
@@ -498,10 +498,11 @@ public class LASemantico extends LABaseVisitor {
             visitChamada_atribuicao(ctx.chamada_atribuicao());
 
             String ident = ctx.IDENT().getText();
+
             String[]array = ident.split("\\.");
 
             //analogo ao caso do visitIdentificador. Verifica se o tamanho do array e 2 devido ao tratamento de registros
-            if(array.length == 2){
+            if(array.length >= 2){
                 for (int i = 0; i < array.length; i++){
                     if(!pilhaDeTabelas.topo().existeSimbolo(array[i])){
                         Mensagens.erroVariavelNaoExiste(ctx.start.getLine(),  ctx.IDENT().getText());
@@ -512,6 +513,25 @@ public class LASemantico extends LABaseVisitor {
                 if(!pilhaDeTabelas.existeSimbolo( ctx.IDENT().getText()))
                     Mensagens.erroVariavelNaoExiste(ctx.start.getLine(),  ctx.IDENT().getText());
             }
+
+            //incompatibilidade de tipos
+            if(ctx.chamada_atribuicao().expressao() != null){
+                System.out.println("var: " +ctx.IDENT().getText() + " tipo1: " +pilhaDeTabelas.topo().gettipoVar(ctx.IDENT().getText()));
+                System.out.println("tipo2: " +MergeTipos.mergeTipos(ctx.chamada_atribuicao().expressao()));
+
+                if(pilhaDeTabelas.topo().gettipoVar(ctx.IDENT().getText()) != null){
+                    String incompat = MergeTipos.regraTipos(pilhaDeTabelas.topo().gettipoVar(ctx.IDENT().getText()),
+                            MergeTipos.mergeTipos(ctx.chamada_atribuicao().expressao()));
+
+                    if(incompat.equals("erro")){
+                        Token token = ctx.IDENT().getSymbol();
+                        int line = token.getLine();
+                        Mensagens.incompatibilidadeDeTipos(line, ctx.IDENT().getText());
+                    }
+                }
+
+            }
+
 
         }else if(ctx.getText().startsWith("retorne")){
             //unico local que retorne e possivel e em funcoes
@@ -724,7 +744,7 @@ public class LASemantico extends LABaseVisitor {
             String ident = ctx.valor;
             String[]array = ident.split("\\.");
 
-            if(array.length == 2){
+            if(array.length >= 2){
                 for (int i = 0; i < array.length; i++){
                     if(!pilhaDeTabelas.topo().existeSimbolo(array[i])){
                         Mensagens.erroVariavelNaoExiste(ctx.start.getLine(), ctx.valor);
@@ -744,7 +764,7 @@ public class LASemantico extends LABaseVisitor {
             String ident = ctx.valor;
             String[]array = ident.split("\\.");
 
-            if(array.length == 2){
+            if(array.length >= 2){
                 for (int i = 0; i < array.length; i++){
                     if(!pilhaDeTabelas.topo().existeSimbolo(array[i])){
                         Mensagens.erroVariavelNaoExiste(ctx.start.getLine(), ctx.valor);
