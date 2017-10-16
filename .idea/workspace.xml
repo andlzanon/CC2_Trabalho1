@@ -7,10 +7,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="942d631c-1d00-4618-a2f8-0865c4ec981d" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/trabalho1/LAGenerator.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/LAT1_jar/LAT1.jar" afterPath="$PROJECT_DIR$/out/artifacts/LAT1_jar/LAT1.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/CorretorTrabalho1.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/CorretorTrabalho1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Chamada_partesContext.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Chamada_partesContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Exp_relacionalContext.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Exp_relacionalContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$ExpressaoContext.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$ExpressaoContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$FatorContext.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$FatorContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Fator_logicoContext.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Fator_logicoContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Op_naoContext.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Op_naoContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Op_opcionalContext.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Op_opcionalContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Op_relacionalContext.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Op_relacionalContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Outras_parcelasContext.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Outras_parcelasContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Outros_fatoresContext.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Outros_fatoresContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Outros_fatores_logicosContext.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Outros_fatores_logicosContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Outros_termosContext.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Outros_termosContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Outros_termos_logicosContext.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Outros_termos_logicosContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$ParcelaContext.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$ParcelaContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Parcela_logicaContext.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Parcela_logicaContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Parcela_nao_unarioContext.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Parcela_nao_unarioContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Parcela_unarioContext.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Parcela_unarioContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Termo_logicoContext.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser$Termo_logicoContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LAParser.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LASemantico.class" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LASemantico.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LA.g4" afterPath="$PROJECT_DIR$/out/production/LAT1/trabalho1/LA.g4" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/trabalho1/CorretorTrabalho1.java" afterPath="$PROJECT_DIR$/src/trabalho1/CorretorTrabalho1.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/trabalho1/LA.g4" afterPath="$PROJECT_DIR$/src/trabalho1/LA.g4" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/trabalho1/LAParser.java" afterPath="$PROJECT_DIR$/src/trabalho1/LAParser.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/trabalho1/LASemantico.java" afterPath="$PROJECT_DIR$/src/trabalho1/LASemantico.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/saidaProduzida/saidaSemanticoComErros/_ok_1.algoritmo_2-2_apostila_LA.txt" afterPath="$PROJECT_DIR$/temp/saidaProduzida/saidaSemanticoComErros/_ok_1.algoritmo_2-2_apostila_LA.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/saidaProduzida/saidaSemanticoComErros/_ok_12.algoritmo_8-3_apostila_LA.txt" afterPath="$PROJECT_DIR$/temp/saidaProduzida/saidaSemanticoComErros/_ok_12.algoritmo_8-3_apostila_LA.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/saidaProduzida/saidaSemanticoComErros/_ok_3.algoritmo_3-1_apostila_LA.txt" afterPath="$PROJECT_DIR$/temp/saidaProduzida/saidaSemanticoComErros/_ok_3.algoritmo_3-1_apostila_LA.txt" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,29 +51,27 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/CC2_Trabalho1$CorretorTrabalho1.coverage" NAME="CorretorTrabalho1 Coverage Results" MODIFIED="1507837712561" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="LASemantico.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/trabalho1/LASemantico.java">
+      <file leaf-file-name="LA.g4" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/trabalho1/LA.g4">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="127" column="25" lean-forward="false" selection-start-line="127" selection-start-column="25" selection-end-line="127" selection-end-column="25" />
+            <state relative-caret-position="202">
+              <caret line="136" column="0" lean-forward="false" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="42" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#13#155#1" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LA.g4" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/trabalho1/LA.g4">
+      <file leaf-file-name="LASemantico.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/trabalho1/LASemantico.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="140" column="0" lean-forward="true" selection-start-line="140" selection-start-column="0" selection-end-line="146" selection-end-column="37" />
+            <state relative-caret-position="177">
+              <caret line="664" column="62" lean-forward="false" selection-start-line="664" selection-start-column="62" selection-end-line="664" selection-end-column="62" />
               <folding>
-                <element signature="e#13#155#1" expanded="true" />
-                <marker date="1508017489537" expanded="true" signature="165:167" ph=":...;" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -54,8 +80,8 @@
       <file leaf-file-name="CorretorTrabalho1.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/trabalho1/CorretorTrabalho1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1037">
-              <caret line="61" column="20" lean-forward="false" selection-start-line="61" selection-start-column="20" selection-end-line="61" selection-end-column="20" />
+            <state relative-caret-position="235">
+              <caret line="52" column="8" lean-forward="false" selection-start-line="52" selection-start-column="8" selection-end-line="52" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -79,7 +105,7 @@
       <file leaf-file-name="TabelaDeSimbolos.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/trabalho1/TabelaDeSimbolos.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
+            <state relative-caret-position="306">
               <caret line="19" column="31" lean-forward="false" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
               <folding />
             </state>
@@ -107,15 +133,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Cadeia</find>
-      <find>variavel</find>
-      <find>mais_var</find>
-      <find>mais_ident</find>
-      <find>pi</find>
-      <find>su</find>
-      <find>expressao</find>
-      <find>exp_arit</find>
-      <find>parcela</find>
       <find>parcela_unario</find>
       <find>//registros</find>
       <find>eRe</find>
@@ -137,6 +154,15 @@
       <find>registros</find>
       <find>cmd</find>
       <find>identi</find>
+      <find>visitOutras</find>
+      <find>visitOutrosFatores</find>
+      <find>visitOutros</find>
+      <find>visitOutras_parcelas</find>
+      <find>visitOutros_termos_</find>
+      <find>visitOutros_fatores_logicos</find>
+      <find>visitParcela</find>
+      <find>visitOutros_fatores</find>
+      <find>visitOutros_termos</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -169,14 +195,15 @@
         <option value="$PROJECT_DIR$/src/trabalho1/Registro.java" />
         <option value="$PROJECT_DIR$/src/trabalho1/antlr-4.7-complete.jar!/org/antlr/v4/runtime/ParserRuleContext.class" />
         <option value="$PROJECT_DIR$/src/trabalho1/Mensagens.java" />
-        <option value="$PROJECT_DIR$/src/trabalho1/LA.g4" />
         <option value="$PROJECT_DIR$/src/trabalho1/TabelaDeSimbolos.java" />
+        <option value="$PROJECT_DIR$/src/trabalho1/MergeTipos.java" />
+        <option value="$PROJECT_DIR$/src/trabalho1/LA.g4" />
         <option value="$PROJECT_DIR$/src/trabalho1/CorretorTrabalho1.java" />
         <option value="$PROJECT_DIR$/src/trabalho1/LASemantico.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1382" />
@@ -198,88 +225,50 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CC2_Trabalho1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CC2_Trabalho1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CC2_Trabalho1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CC2_Trabalho1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CC2_Trabalho1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="temp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saidaProduzida" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saidaSemanticoComErros" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CC2_Trabalho1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CC2_Trabalho1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trabalho1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CC2_Trabalho1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CC2_Trabalho1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
+          <expand>
+            <path>
+              <item name="CC2_Trabalho1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CC2_Trabalho1" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CC2_Trabalho1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CC2_Trabalho1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CC2_Trabalho1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CC2_Trabalho1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="trabalho1" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CC2_Trabalho1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CC2_Trabalho1" type="462c0819:PsiDirectoryNode" />
+              <item name="temp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CC2_Trabalho1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CC2_Trabalho1" type="462c0819:PsiDirectoryNode" />
+              <item name="temp" type="462c0819:PsiDirectoryNode" />
+              <item name="saidaProduzida" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CC2_Trabalho1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CC2_Trabalho1" type="462c0819:PsiDirectoryNode" />
+              <item name="temp" type="462c0819:PsiDirectoryNode" />
+              <item name="saidaProduzida" type="462c0819:PsiDirectoryNode" />
+              <item name="saidaSemanticoComErros" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -314,12 +303,100 @@
     </option>
   </component>
   <component name="RunManager" selected="Application.CorretorTrabalho1">
+    <configuration name="CorretorTrabalho1" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="trabalho1.CorretorTrabalho1" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="LAT1" />
+      <envs />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="trabalho1.CorretorTrabalho1" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
       <option name="PROGRAM_PARAMETERS" />
       <predefined_log_file id="idea.log" enabled="true" />
-      <method />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
     </configuration>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android App">
       <module name="" />
@@ -376,29 +453,6 @@
       </Profilers>
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <module />
-      <method />
-    </configuration>
-    <configuration default="true" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="trabalho1.CorretorTrabalho1" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
-      <method />
-    </configuration>
     <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -413,27 +467,6 @@
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <method />
-    </configuration>
-    <configuration default="true" type="JUnit" factoryName="JUnit">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
       <method />
     </configuration>
     <configuration default="true" type="JarApplication" factoryName="JAR Application">
@@ -482,60 +515,6 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
-      <method />
-    </configuration>
-    <configuration default="true" type="TestNG" factoryName="TestNG">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
-      <method />
-    </configuration>
-    <configuration default="false" name="CorretorTrabalho1" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="trabalho1.CorretorTrabalho1" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="LAT1" />
-      <envs />
-      <method />
-    </configuration>
-    <list size="1">
-      <item index="0" class="java.lang.String" itemvalue="Application.CorretorTrabalho1" />
-    </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -551,14 +530,13 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Tool Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2665615" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2657005" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -566,11 +544,10 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22397476" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.119873814" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22547585" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22844176" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="ANTLR Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -579,8 +556,10 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39905363" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329429" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
@@ -601,8 +580,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/temp/saidaProduzida/saidaSemanticoComErros/2.algoritmo_2-4_apostila_LA.txt" />
-    <entry file="file://$PROJECT_DIR$/temp/saidaProduzida/saidaSemanticoComErros/11.algoritmo_8-1_apostila_LA.txt" />
     <entry file="file://$PROJECT_DIR$/src/trabalho1/LABaseListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="219">
@@ -649,21 +626,8 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/temp/saidaProduzida/saidaSemanticoComErros/17.algoritmo_9-2_apostila_LA.txt" />
-    <entry file="file://$PROJECT_DIR$/temp/saidaProduzida/saidaSemanticoComErros/_erro_18.algoritmo_2-2_apostila_LA.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/src.zip!/java/lang/String.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-62">
-          <caret line="110" column="19" lean-forward="false" selection-start-line="110" selection-start-column="19" selection-end-line="110" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/temp/saidaProduzida/saidaSemanticoComErros/_erro_18.algoritmo_2-2_apostila_LA.txt" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/src.zip!/java/lang/String.java" />
     <entry file="file://$PROJECT_DIR$/src/TabelaDeTipos.java" />
     <entry file="file://$PROJECT_DIR$/temp/saidaProduzida/saidaSemanticoComErros/_erro_14.algoritmo_10-1_apostila_LA.txt">
       <provider selected="true" editor-type-id="text-editor">
@@ -715,7 +679,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/temp/saidaProduzida/saidaSemanticoComErros/_erro_1.algoritmo_2-2_apostila_LA.txt" />
-    <entry file="file://$PROJECT_DIR$/temp/saidaProduzida/saidaSemanticoComErros/_erro_3.algoritmo_3-1_apostila_LA.txt" />
     <entry file="file://$PROJECT_DIR$/temp/saidaProduzida/saidaSemanticoComErros/_erro_8.algoritmo_6-2_apostila_LA.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -730,36 +693,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/src.zip!/java/lang/Object.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/src.zip!/java/util/ArrayList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="858" column="0" lean-forward="false" selection-start-line="858" selection-start-column="0" selection-end-line="858" selection-end-column="0" />
-          <folding>
-            <element signature="e#10189#10190#0" expanded="false" />
-            <element signature="e#10216#10217#0" expanded="false" />
-            <element signature="e#30684#30685#0" expanded="false" />
-            <element signature="e#30716#30717#0" expanded="false" />
-            <element signature="e#31041#31042#0" expanded="false" />
-            <element signature="e#31086#31087#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/src.zip!/java/lang/Class.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="3369" column="0" lean-forward="false" selection-start-line="3369" selection-start-column="0" selection-end-line="3369" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/src.zip!/java/lang/Object.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/src.zip!/java/util/ArrayList.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/src.zip!/java/lang/Class.java" />
     <entry file="jar://$PROJECT_DIR$/src/trabalho1/antlr-4.7-complete.jar!/org/antlr/v4/runtime/ParserRuleContext.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
@@ -775,13 +711,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/temp/saidaProduzida/saidaSemanticoComErros/_erro_16.algoritmo_3-3_apostila_LA.txt" />
-    <entry file="file://$PROJECT_DIR$/temp/saidaProduzida/saidaSemanticoComErros/_erro_17.algoritmo_9-2_apostila_LA.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="34" lean-forward="true" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/temp/saidaProduzida/saidaSemanticoComErros/_erro_17.algoritmo_9-2_apostila_LA.txt" />
     <entry file="file://$PROJECT_DIR$/src/trabalho1/Mensagens.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="731">
@@ -796,185 +726,6 @@
           <caret line="1010" column="0" lean-forward="false" selection-start-line="1010" selection-start-column="0" selection-end-line="1010" selection-end-column="0" />
           <folding>
             <element signature="e#30290#30291#0" expanded="true" />
-            <marker date="1508032813028" expanded="false" signature="54724:54730" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="54778:54782" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="54830:54836" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="54889:54893" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="54969:54975" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="55004:55008" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="56315:56321" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="56368:56372" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="56448:56454" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="56483:56487" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="57795:57801" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="57859:57863" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="57907:57913" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="57964:57968" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="58004:58010" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="58057:58061" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="58099:58105" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="58153:58157" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="58237:58243" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="58272:58276" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="59806:59812" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="59860:59864" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="59912:59918" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="59971:59975" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="60056:60062" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="60091:60095" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="61559:61565" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="61614:61618" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="61654:61660" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="61707:61711" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="61755:61761" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="61812:61816" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="61885:61891" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="61920:61924" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="62967:62973" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="63019:63023" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="63097:63103" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="63132:63136" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="64393:64399" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="64454:64458" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="64508:64514" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="64568:64572" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="64644:64650" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="64679:64683" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="65701:65707" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="65756:65760" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="65837:65843" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="65872:65876" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="67154:67160" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="67208:67212" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="67342:67348" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="67405:67409" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="67487:67493" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="67522:67526" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="68626:68632" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="68680:68684" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="68838:68844" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="68873:68877" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="70259:70265" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="70294:70298" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="71548:71554" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="71598:71602" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="71648:71654" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="71706:71710" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="71786:71792" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="71821:71825" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="72901:72907" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="72936:72940" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="74202:74208" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="74237:74241" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="75402:75408" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="75452:75456" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="75504:75510" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="75563:75567" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="75634:75640" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="75669:75673" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="76635:76641" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="76689:76693" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="76723:76729" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="76823:76829" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="76881:76885" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="76960:76966" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="76995:76999" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="78259:78265" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="78311:78315" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="78365:78371" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="78425:78429" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="78496:78502" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="78531:78535" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="79515:79521" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="79576:79580" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="79610:79616" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="79660:79664" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="79712:79718" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="79771:79775" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="79851:79857" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="79886:79890" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="81719:81725" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="81773:81777" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="81825:81831" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="81884:81888" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="81944:81950" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="82007:82011" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="82080:82086" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="82115:82119" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="83737:83743" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="83794:83798" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="83834:83840" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="83887:83891" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="83939:83945" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="83998:84002" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="84190:84196" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="84244:84248" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="84324:84330" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="84359:84363" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="87121:87127" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="87178:87182" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="87218:87224" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="87271:87275" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="87427:87433" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="87462:87466" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="88879:88885" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="88931:88935" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="88985:88991" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="89045:89049" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="89126:89132" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="89161:89165" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="91087:91093" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="91141:91145" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="91193:91199" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="91252:91256" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="91300:91306" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="91357:91361" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="91397:91403" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="91450:91454" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="91530:91536" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="91565:91569" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="93249:93255" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="93308:93312" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="93354:93360" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="93410:93414" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="93490:93496" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="93525:93529" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="94576:94582" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="94634:94638" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="94686:94692" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="94745:94749" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="94822:94828" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="94857:94861" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="96600:96606" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="96635:96639" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="97968:97974" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="98025:98029" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="98232:98238" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="98267:98271" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="99303:99309" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="99338:99342" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="100657:100663" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="100714:100718" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="100927:100933" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="100962:100966" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="102014:102020" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="102071:102075" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="102290:102296" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="102325:102329" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="104065:104071" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="104122:104126" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="104345:104351" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="104380:104384" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="106122:106128" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="106173:106177" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="106225:106231" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="106284:106288" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="106362:106368" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="106397:106401" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="107432:107438" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="107491:107495" ph=" }" />
-            <marker date="1508032813028" expanded="false" signature="107571:107577" ph=" { " />
-            <marker date="1508032813028" expanded="false" signature="107606:107610" ph=" }" />
           </folding>
         </state>
       </provider>
@@ -1006,7 +757,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/trabalho1/TabelaDeSimbolos.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
+        <state relative-caret-position="306">
           <caret line="19" column="31" lean-forward="false" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
           <folding />
         </state>
@@ -1016,7 +767,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1024,7 +774,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1032,7 +781,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1040,17 +788,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/trabalho1/CorretorTrabalho1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1037">
-          <caret line="61" column="20" lean-forward="false" selection-start-line="61" selection-start-column="20" selection-end-line="61" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1062,7 +799,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/temp/saidaProduzida/saidaSemanticoComErros/_erro_15.algoritmo_11-1_apostila_LA.txt">
+    <entry file="file://$PROJECT_DIR$/temp/saidaProduzida/saidaSemanticoComErros/_erro_15.algoritmo_11-1_apostila_LA.txt" />
+    <entry file="file://$PROJECT_DIR$/src/trabalho1/LAGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1428">
+          <caret line="87" column="44" lean-forward="false" selection-start-line="87" selection-start-column="44" selection-end-line="87" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/trabalho1/MergeTipos.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4457">
+          <caret line="30" column="13" lean-forward="true" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/temp/saidaProduzida/saidaSemanticoComErros/_erro_3.algoritmo_3-1_apostila_LA.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1070,21 +824,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/trabalho1/CorretorTrabalho1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="52" column="8" lean-forward="false" selection-start-line="52" selection-start-column="8" selection-end-line="52" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/trabalho1/LA.g4">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="140" column="0" lean-forward="true" selection-start-line="140" selection-start-column="0" selection-end-line="146" selection-end-column="37" />
+        <state relative-caret-position="202">
+          <caret line="136" column="0" lean-forward="false" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="42" />
           <folding>
             <element signature="e#13#155#1" expanded="true" />
-            <marker date="1508017489537" expanded="true" signature="165:167" ph=":...;" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/trabalho1/LASemantico.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="127" column="25" lean-forward="false" selection-start-line="127" selection-start-column="25" selection-end-line="127" selection-end-column="25" />
+        <state relative-caret-position="177">
+          <caret line="664" column="62" lean-forward="false" selection-start-line="664" selection-start-column="62" selection-end-line="664" selection-end-column="62" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

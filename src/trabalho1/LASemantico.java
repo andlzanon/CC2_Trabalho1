@@ -662,9 +662,12 @@ public class LASemantico extends LABaseVisitor {
     public String visitOutros_termos(LAParser.Outros_termosContext ctx) {
         //outros_termos : op_adicao termo outros_termos | ;
         if (ctx.children != null) {
-            visitOp_adicao(ctx.op_adicao());
-            visitTermo(ctx.termo());
-            visitOutros_termos(ctx.outros_termos());
+            for (int i = 0; i < ctx.op_adicao().size(); i++) {
+                LAParser.Op_adicaoContext op_adicaoContext = ctx.op_adicao().get(i);
+                visitOp_adicao(op_adicaoContext);
+                LAParser.TermoContext termoContext = ctx.termo().get(i);
+                visitTermo(termoContext);
+            }
         }
         return null;
     }
@@ -683,9 +686,14 @@ public class LASemantico extends LABaseVisitor {
     public String visitOutros_fatores(LAParser.Outros_fatoresContext ctx){
         //outros_fatores : op_multiplicacao fator outros_fatores | ;
         if (ctx.children != null) {
-            visitOp_multiplicacao(ctx.op_multiplicacao());
-            visitFator(ctx.fator());
-            visitOutros_fatores(ctx.outros_fatores());
+            for (int i = 0; i < ctx.op_multiplicacao().size(); i++) {
+                LAParser.Op_multiplicacaoContext op_multiplicacaoContext = ctx.op_multiplicacao().get(i);
+                visitOp_multiplicacao(op_multiplicacaoContext);
+                LAParser.FatorContext fatorContext = ctx.fator().get(i);
+                visitFator(fatorContext);
+            }
+
+
         }
         return null;
     }
@@ -781,11 +789,14 @@ public class LASemantico extends LABaseVisitor {
     public String visitOutras_parcelas(LAParser.Outras_parcelasContext ctx) {
         //outras_parcelas : '%' parcela outras_parcelas | ;
         if (ctx.children != null) {
-            visitParcela(ctx.parcela());
-            visitOutras_parcelas(ctx.outras_parcelas());
+            for (int i = 0; i < ctx.parcela().size(); i++) {
+                LAParser.ParcelaContext parcelaContext = ctx.parcela().get(i);
+                visitParcela(parcelaContext);
+            }
         }
-        return null;
+            return null;
     }
+
 
     @Override
     public String visitChamada_partes(LAParser.Chamada_partesContext ctx) {
@@ -857,8 +868,10 @@ public class LASemantico extends LABaseVisitor {
     public String visitOutros_termos_logicos(LAParser.Outros_termos_logicosContext ctx) {
         // outros_termos_logicos : 'ou' termo_logico outros_termos_logicos | ;
         if (ctx.children != null) {
-            visitTermo_logico(ctx.termo_logico());
-            visitOutros_termos_logicos(ctx.outros_termos_logicos());
+            for(int i = 0; i < ctx.termo_logico().size(); i++) {
+                LAParser.Termo_logicoContext termo_logicoContext = ctx.termo_logico().get(i);
+                visitTermo_logico(termo_logicoContext);
+            }
         }
         return null;
     }
@@ -867,8 +880,10 @@ public class LASemantico extends LABaseVisitor {
     public String visitOutros_fatores_logicos(LAParser.Outros_fatores_logicosContext ctx) {
         // outros_fatores_logicos : 'e' fator_logico outros_fatores_logicos | ;
         if (ctx.children != null) {
-            visitFator_logico(ctx.fator_logico());
-            visitOutros_fatores_logicos(ctx.outros_fatores_logicos());
+            for(int i = 0; i < ctx.fator_logico().size(); i++) {
+                LAParser.Fator_logicoContext fator_logicoContext = ctx.fator_logico().get(i);
+                visitFator_logico(fator_logicoContext);
+            }
         }
         return null;
     }
