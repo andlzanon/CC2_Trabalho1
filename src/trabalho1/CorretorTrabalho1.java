@@ -28,8 +28,8 @@ public class CorretorTrabalho1 {
         ProgramaContext arvore = parser.programa();
 
         /*testa exemplo unico
-        File file = new File("C:\\CC2_Trabalho1\\src\\trabalho1\\casosDeTesteT1\\casosDeTesteT1\\" +
-                "2.arquivos_com_erros_semanticos\\entrada\\14.algoritmo_10-1_apostila_LA.txt");
+        File file = new File("C:\\Users\\André\\Documents\\GitHub\\CC2_Trabalho1\\src\\trabalho1\\casosDeTesteT1\\casosDeTesteT1\\" +
+                "2.arquivos_com_erros_semanticos\\entrada\\15.algoritmo_11-1_apostila_LA.txt");
         ANTLRInputStream input = new ANTLRInputStream(new FileInputStream(file));
         LALexer lexer = new LALexer(input);
         lexer.removeErrorListeners();
@@ -44,23 +44,23 @@ public class CorretorTrabalho1 {
 
 
         //saida do analisador sintatico
-        /*File saidaCasoTesteSintatico = new File("C:\\CC2_Trabalho1\\temp\\saidaProduzida\\saidaSintatico\\" + file.getName());
+        /*File saidaCasoTesteSintatico = new File("C:\\Users\\André\\Documents\\GitHub\\CC2_Trabalho1\\temp\\saidaProduzida\\saidaSintatico\\"
+         + file.getName());
         PrintWriter pw = new PrintWriter(new FileWriter(saidaCasoTesteSintatico));
         pw.println(saida);
         pw.println("Fim da compilacao");
         pw.close();
-        pw.flush();*/
-
+        pw.flush(); */
 
         /*saida do analisador semantico*/
         LASemantico laSemantico = new LASemantico();
         laSemantico.visitPrograma(arvore);
-        File saidaCasoTesteSemantico = new File("C:\\CC2_Trabalho1\\temp\\saidaProduzida\\saidaSemanticoComErros\\" + file.getName());
+        File saidaCasoTesteSemantico = new File("C:\\Users\\André\\Documents\\GitHub\\CC2_Trabalho1\\temp\\saidaProduzida\\saidaSemanticoComErros\\"
+                + file.getName());
         PrintWriter pws = new PrintWriter(new FileWriter(saidaCasoTesteSemantico));
         pws.println(Saida.getTexto());
         pws.println("Fim da compilacao");
         pws.close();
         pws.flush();
     }
-
 }

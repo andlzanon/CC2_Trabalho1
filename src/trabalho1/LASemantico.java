@@ -497,9 +497,16 @@ public class LASemantico extends LABaseVisitor {
         }else if(ctx.IDENT() != null){
             visitChamada_atribuicao(ctx.chamada_atribuicao());
 
+            //adcionando as strings dos outros_identificadores, ou seja, dos registros
             String ident = ctx.IDENT().getText();
+            if(ctx.chamada_atribuicao().outros_ident() != null){
+                ident += ctx.chamada_atribuicao().outros_ident().ident;
+            }
 
+            //separa a string
             String[]array = ident.split("\\.");
+            String tipo1 = ctx.IDENT().getText();
+            String tipo2;
 
             //analogo ao caso do visitIdentificador. Verifica se o tamanho do array e 2 devido ao tratamento de registros
             if(array.length >= 2){
@@ -508,6 +515,9 @@ public class LASemantico extends LABaseVisitor {
                         Mensagens.erroVariavelNaoExiste(ctx.start.getLine(),  ctx.IDENT().getText());
                     }
                 }
+
+                //tipo1 e o ultimo atributo do registro. se for o caso
+                tipo1 = array[array.length-1];
             }
             else{
                 if(!pilhaDeTabelas.existeSimbolo( ctx.IDENT().getText()))
@@ -519,19 +529,21 @@ public class LASemantico extends LABaseVisitor {
                 System.out.println("var: " +ctx.IDENT().getText() + " tipo1: " +pilhaDeTabelas.topo().gettipoVar(ctx.IDENT().getText()));
                 System.out.println("tipo2: " +MergeTipos.mergeTipos(ctx.chamada_atribuicao().expressao()));
 
+                //tipo 2 e o tipo da expressao
+                tipo2 = MergeTipos.mergeTipos(ctx.chamada_atribuicao().expressao());
+
+                //verifica erro
                 if(pilhaDeTabelas.topo().gettipoVar(ctx.IDENT().getText()) != null){
-                    String incompat = MergeTipos.regraTipos(pilhaDeTabelas.topo().gettipoVar(ctx.IDENT().getText()),
-                            MergeTipos.mergeTipos(ctx.chamada_atribuicao().expressao()));
+                    String incompat = MergeTipos.regraTipos(pilhaDeTabelas.topo().gettipoVar(tipo1), tipo2);
 
                     if(incompat.equals("erro")){
                         Token token = ctx.IDENT().getSymbol();
                         int line = token.getLine();
-                        Mensagens.incompatibilidadeDeTipos(line, ctx.IDENT().getText());
+                        Mensagens.incompatibilidadeDeTipos(line, ident);
                     }
                 }
 
             }
-
 
         }else if(ctx.getText().startsWith("retorne")){
             //unico local que retorne e possivel e em funcoes
