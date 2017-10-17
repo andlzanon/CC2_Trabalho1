@@ -17,6 +17,7 @@ public class LASemantico extends LABaseVisitor {
     //TabelaDeTipos
     ArrayList<String> TabelaDeTipos;
 
+
     public LASemantico() {
         //inicializacoes
         grupo = "<619922_619795_619841_552437>";
@@ -98,7 +99,7 @@ public class LASemantico extends LABaseVisitor {
             //a variavel tipo recebe o tipo da variavel visitando a regra Tipo
             tipo = visitTipo(ctx.tipo());
 
-            //se o IDENT ja existe na pilhaDeTabelas ou na TabelaDeTipos entao o IDENT ja foi delcarado anteriormente
+            //se o IDENT ja existe na pilhaDeTabelas ou na TabelaDeTipos entao o IDENT ja foi declarado anteriormente
             if(pilhaDeTabelas.existeSimbolo(ctx.IDENT().getText())|| TabelaDeTipos.contains(ctx.IDENT().getText())){
                 Mensagens.erroVariavelJaDeclarada(ctx.getStart().getLine(), ctx.IDENT().getText());
             }
@@ -126,7 +127,7 @@ public class LASemantico extends LABaseVisitor {
             visitMais_var(ctx.mais_var());
 
             //Para debug:
-            System.out.println(pilhaDeTabelas.topo().toString());
+            //System.out.println(pilhaDeTabelas.topo().toString());
         }
 
         return null;
@@ -187,7 +188,7 @@ public class LASemantico extends LABaseVisitor {
             //somente vem para esse else quando trata-se dos parâmetros uma funcao ou de um procedimento
             //assim, sempre sao adicionados na pilha de tabelas
             else {
-                pilhaDeTabelas.topo().adicionarSimbolo(ctx.ident, tipo, "variavel");
+                pilhaDeTabelas.topo().adicionarSimbolo(ctx.ident, tipo, "parametro");
             }
 
         }
@@ -354,8 +355,6 @@ public class LASemantico extends LABaseVisitor {
                 pilhaDeTabelas.topo().CopiaVariaveis(tabelaProc);
                 //empilha tabela
                 pilhaDeTabelas.empilhar(tabelaProc);
-                //acha tipo dos parametros da funcao
-                tipo = ctx.parametros_opcional().parametro().tipo_estendido().getText();
             }
 
             visitParametros_opcional(ctx.parametros_opcional());
@@ -372,11 +371,10 @@ public class LASemantico extends LABaseVisitor {
                 Mensagens.erroVariavelJaDeclarada(ctx.start.getLine(), ctx.IDENT().getText());
             }
             else{
-                pilhaDeTabelas.topo().adicionarSimbolo(ctx.IDENT().getText(), "funcao", "funcao");
+                pilhaDeTabelas.topo().adicionarSimbolo(ctx.IDENT().getText(), ctx.tipo_estendido().getText(), "funcao");
                 TabelaDeSimbolos tabelaFunc = new TabelaDeSimbolos(ctx.IDENT().getText());
                 pilhaDeTabelas.topo().CopiaVariaveis(tabelaFunc);
                 pilhaDeTabelas.empilhar(tabelaFunc);
-                tipo = ctx.parametros_opcional().parametro().tipo_estendido().getText();
             }
 
             visitParametros_opcional(ctx.parametros_opcional());
@@ -494,13 +492,54 @@ public class LASemantico extends LABaseVisitor {
             visitOutros_ident(ctx.outros_ident());
             visitDimensao(ctx.dimensao());
             visitExpressao(ctx.expressao());
+
+            String ident = "^" + ctx.IDENT().getText();
+
+            if(!pilhaDeTabelas.existeSimbolo( ctx.IDENT().getText()))
+                    Mensagens.erroVariavelNaoExiste(ctx.start.getLine(),  ctx.IDENT().getText());
+
+            //incompatibilidade de tipos
+            if(ctx.expressao() != null){
+                //System.out.println("var: " +ctx.IDENT().getText() + " tipo1: " +pilhaDeTabelas.topo().gettipoVar(ctx.IDENT().getText()));
+                //System.out.println("tipo2: " +MergeTipos.mergeTipos(ctx.expressao()));
+
+                //tipo 2 e o tipo da expressao
+                String tipo2 = MergeTipos.mergeTipos(ctx.expressao());
+
+                //verifica erro
+                if(pilhaDeTabelas.topo().gettipoVar(ctx.IDENT().getText()) != null){
+                    String incompat = MergeTipos.regraTipos(pilhaDeTabelas.topo().gettipoVar(ctx.IDENT().getText()), tipo2);
+
+                    if(incompat.equals("erro")){
+                        Token token = ctx.IDENT().getSymbol();
+                        int line = token.getLine();
+                        Mensagens.incompatibilidadeDeTipos(line, ident);
+                    }
+                }
+
+            }
+
+        }else if(ctx.getText().startsWith("retorne")){
+            //unico local que retorne e possivel e em funcoes
+            //logo, se esta no escopo global ou em procedimento. ERRO!
+            if(pilhaDeTabelas.topo().getEscopo().equals("global") || eProc){
+                Mensagens.retornoEscopoErrado(ctx.start.getLine());
+            }
+
+
         }else if(ctx.IDENT() != null){
             visitChamada_atribuicao(ctx.chamada_atribuicao());
 
-            //adcionando as strings dos outros_identificadores, ou seja, dos registros
             String ident = ctx.IDENT().getText();
+
+            //adcionando as strings dos outros_identificadores, ou seja, dos registros
             if(ctx.chamada_atribuicao().outros_ident() != null){
                 ident += ctx.chamada_atribuicao().outros_ident().ident;
+            }
+
+            //adiciona a dimensao se existir
+            if(ctx.chamada_atribuicao().dimensao() != null){
+                ident += ctx.chamada_atribuicao().dimensao().getText();
             }
 
             //separa a string
@@ -526,8 +565,8 @@ public class LASemantico extends LABaseVisitor {
 
             //incompatibilidade de tipos
             if(ctx.chamada_atribuicao().expressao() != null){
-                System.out.println("var: " +ctx.IDENT().getText() + " tipo1: " +pilhaDeTabelas.topo().gettipoVar(ctx.IDENT().getText()));
-                System.out.println("tipo2: " +MergeTipos.mergeTipos(ctx.chamada_atribuicao().expressao()));
+                //System.out.println("var: " +ctx.IDENT().getText() + " tipo1: " +pilhaDeTabelas.topo().gettipoVar(ctx.IDENT().getText()));
+                //System.out.println("tipo2: " +MergeTipos.mergeTipos(ctx.chamada_atribuicao().expressao()));
 
                 //tipo 2 e o tipo da expressao
                 tipo2 = MergeTipos.mergeTipos(ctx.chamada_atribuicao().expressao());
@@ -560,8 +599,10 @@ public class LASemantico extends LABaseVisitor {
     public String visitMais_expressao(LAParser.Mais_expressaoContext ctx) {
         //mais_expressao : ',' expressao mais_expressao | ;
         if(ctx.children != null){
-            visitExpressao(ctx.expressao());
-            visitMais_expressao(ctx.mais_expressao());
+            for(int i = 0; i < ctx.expressao().size(); i++){
+                LAParser.ExpressaoContext expressaoContext = ctx.expressao().get(i);
+                visitExpressao(expressaoContext);
+            }
         }
         return null;
     }
@@ -724,8 +765,6 @@ public class LASemantico extends LABaseVisitor {
                 LAParser.FatorContext fatorContext = ctx.fator().get(i);
                 visitFator(fatorContext);
             }
-
-
         }
         return null;
     }

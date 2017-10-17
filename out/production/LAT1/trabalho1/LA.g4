@@ -100,7 +100,7 @@ cmd : 'leia' '(' identificador mais_ident')'
 | IDENT chamada_atribuicao
 | 'retorne' expressao;
 
-mais_expressao : ',' expressao mais_expressao | ;
+mais_expressao : (',' expressao)*;
 
 senao_opcional : 'senao' comandos | ;
 
