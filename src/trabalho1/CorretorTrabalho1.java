@@ -1,3 +1,4 @@
+
 package trabalho1;
 
 import org.antlr.v4.runtime.*;
@@ -27,40 +28,22 @@ public class CorretorTrabalho1 {
         parser.addErrorListener(new T1SyntaxErrorListener(saida));
         ProgramaContext arvore = parser.programa();
 
-        /*testa exemplo unico
-        File file = new File("C:\\Users\\André\\Documents\\GitHub\\CC2_Trabalho1\\src\\trabalho1\\casosDeTesteT1\\casosDeTesteT1\\" +
-                "2.arquivos_com_erros_semanticos\\entrada\\13.algoritmo_9-4_apostila_LA.txt");
-        ANTLRInputStream input = new ANTLRInputStream(new FileInputStream(file));
-        LALexer lexer = new LALexer(input);
-        lexer.removeErrorListeners();
-        CommonTokenStream tokens = new CommonTokenStream(lexer);
-        LAParser parser = new LAParser(tokens);
-        parser.removeErrorListeners();
-        parser.addErrorListener(new T1SyntaxErrorListener(saida));
-        ProgramaContext arvore = parser.programa();
-        LASemantico laSemantico = new LASemantico();
-        laSemantico.visitPrograma(arvore);
-        System.out.println(Saida.getTexto());*/
-
-
-        /*saida do analisador sintatico
-        File saidaCasoTesteSintatico = new File("C:\\Users\\André\\Documents\\GitHub\\CC2_Trabalho1\\temp\\saidaProduzida\\saidaSintatico\\"
-         + file.getName());
-        PrintWriter pw = new PrintWriter(new FileWriter(saidaCasoTesteSintatico));
+        //saida do analisador sintatico
+        //Comentar aqui para rodar o sintatico e descomentar o semantico
+        PrintWriter pw = new PrintWriter(new FileWriter(args[1]));
         pw.println(saida);
         pw.println("Fim da compilacao");
         pw.close();
-        pw.flush();*/
+        pw.flush();
 
-        /*saida do analisador semantico*/
+        /*saida do analisador semantico
+        //Descomentar para funcionar e comentar o semantico
         LASemantico laSemantico = new LASemantico();
         laSemantico.visitPrograma(arvore);
-        File saidaCasoTesteSemantico = new File("C:\\Users\\André\\Documents\\GitHub\\CC2_Trabalho1\\temp\\saidaProduzida\\saidaSemanticoComErros\\"
-                + file.getName());
-        PrintWriter pws = new PrintWriter(new FileWriter(saidaCasoTesteSemantico));
+        PrintWriter pws = new PrintWriter(new File(args[1]));
         pws.println(Saida.getTexto());
         pws.println("Fim da compilacao");
         pws.close();
-        pws.flush();
+        pws.flush();*/
     }
 }
